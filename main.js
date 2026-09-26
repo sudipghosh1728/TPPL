@@ -28,27 +28,25 @@ document.querySelectorAll('.nav-group>button').forEach(button=>button.addEventLi
 const footerLinks=document.querySelector('.footer-links');
 if(footerLinks){const enquiry=footerLinks.querySelector('a[href="#contact"]');for(const [href,label] of [['#infrastructure','Infrastructure'],['#quality','Quality'],['#testimonials','Testimonials']]){if(!footerLinks.querySelector(`a[href="${href}"]`)){const link=document.createElement('a');link.href=href;link.textContent=label;footerLinks.insertBefore(link,enquiry);}}}
 document.querySelector('#year').textContent=new Date().getFullYear();
-const slides = [...document.querySelectorAll('.hero-slide')];
+const heroVideo = document.querySelector('.hero-video');
 const slideToggle = document.querySelector('.slide-toggle');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-let currentSlide = 0;
-let slideshowPaused = reducedMotion.matches;
-let slideshowTimer;
-function updateSlideshow() {
-  clearInterval(slideshowTimer);
-  slideToggle.textContent = slideshowPaused ? 'Play slideshow' : 'Pause slideshow';
-  slideToggle.setAttribute('aria-label', `${slideshowPaused ? 'Play' : 'Pause'} homepage slideshow`);
-  if (slideshowPaused || document.hidden) return;
-  slideshowTimer = setInterval(() => {
-    slides[currentSlide].classList.remove('is-active');
-    slides[currentSlide].setAttribute('aria-hidden', 'true');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('is-active');
-    slides[currentSlide].removeAttribute('aria-hidden');
-    document.querySelector('.slide-position').textContent = `0${currentSlide + 1} / 03`;
-  }, 5000);
+let heroVideoPaused = reducedMotion.matches;
+function updateHeroVideo() {
+  slideToggle.textContent = heroVideoPaused ? 'Play video' : 'Pause video';
+  slideToggle.setAttribute('aria-label', `${heroVideoPaused ? 'Play' : 'Pause'} homepage manufacturing video`);
+  if (heroVideoPaused || document.hidden) {
+    heroVideo.pause();
+    return;
+  }
+  heroVideo.play().catch(() => {
+    heroVideoPaused = true;
+    slideToggle.textContent = 'Play video';
+    slideToggle.setAttribute('aria-label', 'Play homepage manufacturing video');
+  });
 }
-slideToggle.addEventListener('click', () => { slideshowPaused = !slideshowPaused; updateSlideshow(); });
-reducedMotion.addEventListener('change', () => { slideshowPaused = reducedMotion.matches; updateSlideshow(); });
-document.addEventListener('visibilitychange', updateSlideshow);
-updateSlideshow();
+slideToggle.addEventListener('click', () => { heroVideoPaused = !heroVideoPaused; updateHeroVideo(); });
+heroVideo.addEventListener('click', () => slideToggle.click());
+reducedMotion.addEventListener('change', () => { heroVideoPaused = reducedMotion.matches; updateHeroVideo(); });
+document.addEventListener('visibilitychange', updateHeroVideo);
+updateHeroVideo();

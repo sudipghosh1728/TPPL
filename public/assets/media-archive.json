@@ -1,9 +1,9 @@
 {
   "created": "2026-09-26T08:56:05.892Z",
   "assetRoot": "public/assets",
-  "mediaFiles": 136,
+  "mediaFiles": 137,
   "images": 126,
-  "videos": 10,
+  "videos": 11,
   "mappedOriginalWebsiteAssets": 76,
   "missingMapped": [],
   "sourceUrlsRetainedAsMetadata": true,
@@ -43,5 +43,11 @@
       "bytes": 16629450,
       "sha256": "2729760f6df836f1c5d27508e74274e404c993452b969d151118802408a1fa36"
     }
-  ]
+  ],
+  "homepageVideo": {
+    "file": "public/assets/videos/tppl-homepage-manufacturing.mp4",
+    "source": "User-supplied master file",
+    "bytes": 12777024,
+    "sha256": "0e54dd0adc99e321b4d1203a0bbd0d187a30f90a30c4f3b47d81785f2ba647d7"
+  }
 }
