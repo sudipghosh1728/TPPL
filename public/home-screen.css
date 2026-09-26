@@ -1,7 +1,23 @@
 /* Homepage screen compositions. Content can grow when details are opened. */
 #home.hero { height:auto; min-height:620px; }
-#home .hero-stats { position:relative; z-index:2; background:linear-gradient(120deg,#102f4acc,#163a5b9c); backdrop-filter:blur(14px); border-top:1px solid #ffffff40; border-bottom:0; color:#fff; padding:20px 7%; }
-#home .hero-stats>div { border-color:#ffffff35; }
+#home .hero-stats {
+  position:relative; z-index:2; margin:12px 7% 10px; padding:10px;
+  color:#fff; background:linear-gradient(120deg,#d7e9f21c,#ffffff0d);
+  border:1px solid #ffffff55; border-radius:18px;
+  box-shadow:inset 0 1px #ffffff30,0 18px 42px #071a2a38;
+  -webkit-backdrop-filter:blur(15px) saturate(140%);
+  backdrop-filter:blur(15px) saturate(140%);
+}
+#home .hero-stats>div {
+  border-color:#ffffff35; border-radius:12px; padding:12px 22px;
+  transition:background .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+#home .hero-stats>div:first-child { padding-left:22px; }
+#home .hero-stats>div:hover {
+  background:#e9f6ff2b; box-shadow:inset 0 1px #ffffff80,0 9px 22px #071a2a3d;
+  -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px);
+  transform:translateY(-3px);
+}
 #home .hero-stats strong { color:#fff; }
 #home .hero-stats p { color:#d9e8f2; }
 #home .hero-bottom { position:relative; left:auto; right:auto; bottom:auto; margin:0 7%; padding:15px 0; }
@@ -23,7 +39,7 @@
   #home .hero-intro { margin-bottom:0; line-height:1.55; }
   #home .hero-actions { margin-top:20px; }
   #home .hero-bottom { flex:none; font-size:8px; }
-  #home .hero-stats { flex:none; padding-top:14px; padding-bottom:14px; }
+  #home .hero-stats { flex:none; }
   #home .hero-stats strong { font-size:32px; }
   #home .hero-stats strong.iso { font-size:23px; }
   main>.section .section-heading { margin-bottom:20px; }
@@ -84,7 +100,11 @@
   #home.hero { min-height:0; }
   #home .hero-content { padding-top:40px; padding-bottom:32px; }
   #home .hero-bottom { gap:10px; font-size:7px; flex-wrap:wrap; }
-  #home .hero-stats { padding:20px 6%; gap:20px 0; }
+  #home .hero-stats { margin:10px 6% 14px; padding:8px; gap:3px; }
+  #home .hero-stats>div,#home .hero-stats>div:first-child { padding:10px; }
   #home .hero-stats strong { font-size:25px; }
   #home .hero-stats strong.iso { font-size:17px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #home .hero-stats>div:hover { transform:none; }
 }
