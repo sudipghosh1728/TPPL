@@ -62,4 +62,14 @@ Run `node scripts/build-content-pages.mjs` after updating `content/site-content.
 
 ## Offline media archive
 
-Every photograph and video used by the website is stored below `public/assets`, so published pages do not depend on the original TPPL website for media delivery. `content/assets.json` preserves the source URL to local-file mapping for migrated media. The homepage process explorer uses the original TPPL machinery clip at `public/assets/videos/tppl-machinery-showcase.mp4`; the complete migrated source collection remains in `public/assets/migrated`.
+Every photograph and video used by the website is stored below `public/assets`, so published pages do not depend on the original TPPL website for media delivery. `content/assets.json` preserves the source URL to local-file mapping for migrated media. The complete migrated source collection remains in `public/assets/migrated`.
+
+The homepage process explorer uses locally archived, free-to-use process footage and changes the clip with the selected process:
+
+- Cutting: Pexels video 28268186 by Žygintas Urbonas — https://www.pexels.com/video/cnc-28268186/
+- Forming: Pexels video 27936928 by Žygintas Urbonas — https://www.pexels.com/video/cnc-27936928/
+- Fabrication: Pexels video 5846597 by Tima Miroshnichenko — https://www.pexels.com/video/cutting-metal-with-welding-torch-5846597/
+- Machining: Pexels video 5161379 by Memory Portraits — https://www.pexels.com/video/close-up-footage-of-a-machine-smoothening-a-material-5161379/
+- Finishing: Pexels video 11887089 by Alex Moisieiev — https://www.pexels.com/video/a-factory-worker-painting-with-a-spray-gun-11887089/
+
+The original TPPL gallery machinery video remains archived at `public/assets/videos/tppl-machinery-showcase.mp4`.

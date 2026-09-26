@@ -1,16 +1,47 @@
 {
-  "created": "2026-09-26T08:26:20.046Z",
+  "created": "2026-09-26T08:48:32.640Z",
   "assetRoot": "public/assets",
-  "mediaFiles": 130,
+  "mediaFiles": 135,
   "images": 126,
-  "videos": 4,
+  "videos": 9,
   "mappedOriginalWebsiteAssets": 76,
   "missingMapped": [],
-  "remoteMediaInRenderedDocuments": [],
   "sourceUrlsRetainedAsMetadata": true,
-  "featuredProcessVideo": {
-    "file": "public/assets/videos/tppl-machinery-showcase.mp4",
-    "bytes": 11792113,
-    "sha256": "c0276e045e97cd7338f87252402503916a64f738c1c814bf1d2da3b0ff476961"
-  }
+  "processVideos": [
+    {
+      "process": "Cutting",
+      "file": "public/assets/videos/cnc-laser-cutting-process.mp4",
+      "source": "https://www.pexels.com/video/cnc-28268186/",
+      "bytes": 24540294,
+      "sha256": "d9700b64b99878ac3c3293d9a358a80bb268835e0fa57545fa02af7807284df1"
+    },
+    {
+      "process": "Forming",
+      "file": "public/assets/videos/forming-process.mp4",
+      "source": "https://www.pexels.com/video/cnc-27936928/",
+      "bytes": 10843018,
+      "sha256": "85035bcad16599115ebfa6d85ec492fc75c7e16733f0d10a3f990cf2376be685"
+    },
+    {
+      "process": "Fabrication",
+      "file": "public/assets/videos/fabrication-welding-process.mp4",
+      "source": "https://www.pexels.com/video/cutting-metal-with-welding-torch-5846597/",
+      "bytes": 7729832,
+      "sha256": "1563a58b1c9385845208d57f244373f983ab9c6c0e85b7a983c0b69fa6682fd2"
+    },
+    {
+      "process": "Machining",
+      "file": "public/assets/videos/cnc-machining-process.mp4",
+      "source": "https://www.pexels.com/video/close-up-footage-of-a-machine-smoothening-a-material-5161379/",
+      "bytes": 8089764,
+      "sha256": "854089b277984e5d5dffdc50bd6aa13af66241d4bb8df5dd4611040794b8d5c1"
+    },
+    {
+      "process": "Finishing",
+      "file": "public/assets/videos/finishing-painting-process.mp4",
+      "source": "https://www.pexels.com/video/a-factory-worker-painting-with-a-spray-gun-11887089/",
+      "bytes": 16629450,
+      "sha256": "2729760f6df836f1c5d27508e74274e404c993452b969d151118802408a1fa36"
+    }
+  ]
 }
