@@ -4,7 +4,12 @@
       "slug": "stator-frame-for-tdps-stator-frame",
       "source": "https://www.tpplpune.com/stator-frame-for-tdps-stator-frame.php",
       "title": "Stator Frame For Tdps Stator Frame",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/product-1.webp",
+          "alt": "Stator Frame for TDPS"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -71,13 +76,19 @@
         }
       ],
       "type": "product",
-      "name": "Stator Frame for TDPS"
+      "name": "Stator Frame for TDPS",
+      "fallbackImage": "/assets/product-1.webp"
     },
     {
       "slug": "stator-frame",
       "source": "https://www.tpplpune.com/stator-frame.php",
       "title": "Stator Frame",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/product-2.webp",
+          "alt": "Stator Frame"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -144,13 +155,19 @@
         }
       ],
       "type": "product",
-      "name": "Stator Frame"
+      "name": "Stator Frame",
+      "fallbackImage": "/assets/product-2.webp"
     },
     {
       "slug": "nde-end-shield-for-td-power",
       "source": "https://www.tpplpune.com/nde-end-shield-for-td-power.php",
       "title": "Nde End Shield For Td Power",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/product-3.webp",
+          "alt": "NDE End Shield for TD Power"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -217,13 +234,19 @@
         }
       ],
       "type": "product",
-      "name": "NDE End Shield for TD Power"
+      "name": "NDE End Shield for TD Power",
+      "fallbackImage": "/assets/product-3.webp"
     },
     {
       "slug": "de-end-shield-for-td-powers",
       "source": "https://www.tpplpune.com/de-end-shield-for-td-powers.php",
       "title": "De End Shield For Td Power",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/product-4.webp",
+          "alt": "DE End Shield for TD Power"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -290,13 +313,19 @@
         }
       ],
       "type": "product",
-      "name": "DE End Shield for TD Power"
+      "name": "DE End Shield for TD Power",
+      "fallbackImage": "/assets/product-4.webp"
     },
     {
       "slug": "compression-plate",
       "source": "https://www.tpplpune.com/compression-plate.php",
       "title": "Compression Plate",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/product-5.webp",
+          "alt": "Compression Plate"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -363,13 +392,19 @@
         }
       ],
       "type": "product",
-      "name": "Compression Plate"
+      "name": "Compression Plate",
+      "fallbackImage": "/assets/product-5.webp"
     },
     {
       "slug": "compression-laser-cut",
       "source": "https://www.tpplpune.com/compression-laser-cut.php",
       "title": "Compression Laser Cut",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/df507079f2-laser-cutting.jpg",
+          "alt": "Compression Laser Cut"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -436,13 +471,19 @@
         }
       ],
       "type": "product",
-      "name": "Compression Laser Cut"
+      "name": "Compression Laser Cut",
+      "fallbackImage": "/assets/migrated/df507079f2-laser-cutting.jpg"
     },
     {
       "slug": "gear-case",
       "source": "https://www.tpplpune.com/gear-case.php",
       "title": "Gear Case",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/7e3275882d-12.jpg",
+          "alt": "Gear Case"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -509,13 +550,19 @@
         }
       ],
       "type": "product",
-      "name": "Gear Case"
+      "name": "Gear Case",
+      "fallbackImage": "/assets/migrated/7e3275882d-12.jpg"
     },
     {
       "slug": "tool-drum",
       "source": "https://www.tpplpune.com/tool-drum.php",
       "title": "Tool Drum",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/53cb939825-3.jpg",
+          "alt": "Tool Drum"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -582,13 +629,19 @@
         }
       ],
       "type": "product",
-      "name": "Tool Drum"
+      "name": "Tool Drum",
+      "fallbackImage": "/assets/migrated/53cb939825-3.jpg"
     },
     {
       "slug": "stator-frame-for-td-power",
       "source": "https://www.tpplpune.com/stator-frame-for-td-power.php",
       "title": "Stator Frame For Td Power",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/35a5644f12-1.jpg",
+          "alt": "Stator Frame for TD Power"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -655,13 +708,19 @@
         }
       ],
       "type": "product",
-      "name": "Stator Frame for TD Power"
+      "name": "Stator Frame for TD Power",
+      "fallbackImage": "/assets/migrated/35a5644f12-1.jpg"
     },
     {
       "slug": "roller-for-welding",
       "source": "https://www.tpplpune.com/roller-for-welding.php",
       "title": "Roller For Welding",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/4d6ecd738e-24.jpg",
+          "alt": "Roller for Welding"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -723,13 +782,19 @@
         }
       ],
       "type": "product",
-      "name": "Roller for Welding"
+      "name": "Roller for Welding",
+      "fallbackImage": "/assets/migrated/4d6ecd738e-24.jpg"
     },
     {
       "slug": "machine-base",
       "source": "https://www.tpplpune.com/machine-base.php",
       "title": "Machine Base",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/f082c79d77-7.jpg",
+          "alt": "Machine Base"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -791,16 +856,23 @@
         }
       ],
       "type": "product",
-      "name": "Machine Base"
+      "name": "Machine Base",
+      "fallbackImage": "/assets/migrated/f082c79d77-7.jpg"
     },
     {
       "slug": "valve-body",
       "name": "Valve Body",
       "title": "Valve Body",
       "type": "product",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/d05fbf47b4-9.jpg",
+          "alt": "Valve Body"
+        }
+      ],
       "blocks": [],
       "source": "https://www.tpplpune.com/valve-body.php",
+      "fallbackImage": "/assets/migrated/d05fbf47b4-9.jpg",
       "unavailable": true,
       "videos": []
     },
@@ -808,7 +880,12 @@
       "slug": "material-handling-product",
       "source": "https://www.tpplpune.com/material-handling-product.php",
       "title": "Material Handling Product",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/21f2aef92b-2.jpg",
+          "alt": "Material Handling Product"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -870,13 +947,19 @@
         }
       ],
       "type": "product",
-      "name": "Material Handling Product"
+      "name": "Material Handling Product",
+      "fallbackImage": "/assets/migrated/21f2aef92b-2.jpg"
     },
     {
       "slug": "vaccum-chamber",
       "source": "https://www.tpplpune.com/vaccum-chamber.php",
       "title": "Vacuum Chamber",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/9e65bff941-5.jpg",
+          "alt": "Vacuum Chamber"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -938,13 +1021,19 @@
         }
       ],
       "type": "product",
-      "name": "Vacuum Chamber"
+      "name": "Vacuum Chamber",
+      "fallbackImage": "/assets/migrated/9e65bff941-5.jpg"
     },
     {
       "slug": "cnc-cutting-and-bending-part",
       "source": "https://www.tpplpune.com/cnc-cutting-and-bending-part.php",
       "title": "Cnc Cutting And Bending Part",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/7a72782c32-cnc-press-break.jpg",
+          "alt": "CNC Cutting and Bending Part"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -1010,13 +1099,19 @@
         }
       ],
       "type": "product",
-      "name": "CNC Cutting and Bending Part"
+      "name": "CNC Cutting and Bending Part",
+      "fallbackImage": "/assets/migrated/7a72782c32-cnc-press-break.jpg"
     },
     {
       "slug": "end-shield",
       "source": "https://www.tpplpune.com/end-shield.php",
       "title": "End Shield",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/798fd4f3ae-6.jpg",
+          "alt": "End Shield"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -1082,13 +1177,19 @@
         }
       ],
       "type": "product",
-      "name": "End Shield"
+      "name": "End Shield",
+      "fallbackImage": "/assets/migrated/798fd4f3ae-6.jpg"
     },
     {
       "slug": "valve-plate",
       "source": "https://www.tpplpune.com/valve-plate.php",
       "title": "Valve Plate",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/92da405190-15.jpg",
+          "alt": "Valve Plate"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -1154,13 +1255,19 @@
         }
       ],
       "type": "product",
-      "name": "Valve Plate"
+      "name": "Valve Plate",
+      "fallbackImage": "/assets/migrated/92da405190-15.jpg"
     },
     {
       "slug": "water-jacket",
       "source": "https://www.tpplpune.com/water-jacket.php",
       "title": "Water Jacket",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/32d6f9c673-20.jpg",
+          "alt": "Water Jacket"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -1219,13 +1326,19 @@
         }
       ],
       "type": "product",
-      "name": "Water Jacket"
+      "name": "Water Jacket",
+      "fallbackImage": "/assets/migrated/32d6f9c673-20.jpg"
     },
     {
       "slug": "platform-for",
       "source": "https://www.tpplpune.com/platform-for.php",
       "title": "Platform For",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/55b1430c08-4.jpg",
+          "alt": "Platform"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -1291,13 +1404,19 @@
         }
       ],
       "type": "product",
-      "name": "Platform"
+      "name": "Platform",
+      "fallbackImage": "/assets/migrated/55b1430c08-4.jpg"
     },
     {
       "slug": "profile-flange",
       "source": "https://www.tpplpune.com/profile-flange.php",
       "title": "Profile Flange",
-      "images": [],
+      "images": [
+        {
+          "path": "/assets/migrated/92212fa78a-11.jpg",
+          "alt": "Profile Flange"
+        }
+      ],
       "videos": [],
       "blocks": [
         {
@@ -1363,7 +1482,8 @@
         }
       ],
       "type": "product",
-      "name": "Profile Flange"
+      "name": "Profile Flange",
+      "fallbackImage": "/assets/migrated/92212fa78a-11.jpg"
     }
   ],
   "services": [

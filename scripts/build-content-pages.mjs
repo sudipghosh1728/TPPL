@@ -28,6 +28,31 @@ const productOrder = [
   ['platform-for', 'Platform'],
   ['profile-flange', 'Profile Flange'],
 ];
+// Several product-detail images on the legacy website now return 404. Use
+// distinct TPPL-owned product and gallery photographs preserved in this repo
+// so the catalog remains useful and fully available offline.
+const productImageFallbacks = {
+  'stator-frame-for-tdps-stator-frame': '/assets/product-1.webp',
+  'stator-frame': '/assets/product-2.webp',
+  'nde-end-shield-for-td-power': '/assets/product-3.webp',
+  'de-end-shield-for-td-powers': '/assets/product-4.webp',
+  'compression-plate': '/assets/product-5.webp',
+  'compression-laser-cut': '/assets/migrated/df507079f2-laser-cutting.jpg',
+  'gear-case': '/assets/migrated/7e3275882d-12.jpg',
+  'tool-drum': '/assets/migrated/53cb939825-3.jpg',
+  'stator-frame-for-td-power': '/assets/migrated/35a5644f12-1.jpg',
+  'roller-for-welding': '/assets/migrated/4d6ecd738e-24.jpg',
+  'machine-base': '/assets/migrated/f082c79d77-7.jpg',
+  'valve-body': '/assets/migrated/d05fbf47b4-9.jpg',
+  'material-handling-product': '/assets/migrated/21f2aef92b-2.jpg',
+  'vaccum-chamber': '/assets/migrated/9e65bff941-5.jpg',
+  'cnc-cutting-and-bending-part': '/assets/migrated/7a72782c32-cnc-press-break.jpg',
+  'end-shield': '/assets/migrated/798fd4f3ae-6.jpg',
+  'valve-plate': '/assets/migrated/92da405190-15.jpg',
+  'water-jacket': '/assets/migrated/32d6f9c673-20.jpg',
+  'platform-for': '/assets/migrated/55b1430c08-4.jpg',
+  'profile-flange': '/assets/migrated/92212fa78a-11.jpg',
+};
 const serviceOrder = [
   ['cutting-facilities', 'Profile Cutting'],
   ['fabrication-facilities', 'Fabrication Facilities'],
@@ -37,9 +62,10 @@ const serviceOrder = [
 
 const products = productOrder.map(([slug, name]) => {
   const found = source.find((item) => item.slug === slug);
-  return found ? { ...found, name } : {
+  return found ? { ...found, name, fallbackImage: productImageFallbacks[slug] } : {
     slug, name, title: name, type: 'product', images: [], blocks: [],
     source: `https://www.tpplpune.com/${slug}.php`,
+    fallbackImage: productImageFallbacks[slug],
     unavailable: true,
   };
 });
@@ -52,9 +78,13 @@ const aboutSource = source.find((item) => item.slug === 'about-us');
 const contactSource = source.find((item) => item.slug === 'contact-us');
 
 function mapEntry(entry) {
+  const mappedImages = (entry.images || []).map((img) => ({ ...img, path: local(img.url) })).filter((img) => img.path);
+  if (!mappedImages.length && entry.fallbackImage) {
+    mappedImages.push({ path: entry.fallbackImage, alt: entry.name || entry.title || 'TPPL product' });
+  }
   return {
     ...entry,
-    images: (entry.images || []).map((img) => ({ ...img, path: local(img.url) })).filter((img) => img.path),
+    images: mappedImages,
     videos: (entry.videos || []).map((url) => ({ url, path: local(url) })).filter((video) => video.path),
     blocks: (entry.blocks || []).map((block) => block.type === 'image'
       ? { ...block, path: local(block.url) }
