@@ -14,4 +14,20 @@ for (const folder of ['products', 'services']) {
   }
 }
 
-export default defineConfig({ build: { rollupOptions: { input: inputs } } });
+export default defineConfig({
+  plugins: [{
+    name: 'base-styles-before-page-overrides',
+    transformIndexHtml: {
+      order: 'post',
+      handler(html) {
+        const baseStyles = [];
+        const result = html.replace(/<link\b[^>]*rel="stylesheet"[^>]*href="\/assets\/[^"]+\.css"[^>]*>/g, (tag) => {
+          baseStyles.push(tag);
+          return '';
+        });
+        return result.replace('<head>', '<head>' + baseStyles.join(''));
+      }
+    }
+  }],
+  build: { rollupOptions: { input: inputs } }
+});

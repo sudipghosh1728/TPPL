@@ -1,0 +1,90 @@
+/* Homepage screen compositions. Content can grow when details are opened. */
+#home.hero { height:auto; min-height:620px; }
+#home .hero-stats { position:relative; z-index:2; background:linear-gradient(120deg,#102f4acc,#163a5b9c); backdrop-filter:blur(14px); border-top:1px solid #ffffff40; border-bottom:0; color:#fff; padding:20px 7%; }
+#home .hero-stats>div { border-color:#ffffff35; }
+#home .hero-stats strong { color:#fff; }
+#home .hero-stats p { color:#d9e8f2; }
+#home .hero-bottom { position:relative; left:auto; right:auto; bottom:auto; margin:0 7%; padding:15px 0; }
+#home .hero-content { padding-bottom:28px; }
+.enquiry-specifications { margin:5px 0 12px; border:1px solid #c7dbe8; border-radius:12px; padding:8px 12px; background:#edf4f866; }
+.enquiry-specifications summary { cursor:pointer; font-size:11px; font-weight:600; color:#28678f; }
+.enquiry-specifications[open] summary { margin-bottom:10px; }
+.enquiry-specifications summary:focus-visible { outline:2px solid #f58220; outline-offset:3px; }
+.enquiry-specifications .form-row:last-child label { margin-bottom:0; }
+@media(min-width:1100px) and (min-height:650px) {
+  body:not(.inner-page) { --screen-space:calc(100svh - 58px); }
+  body:not(.inner-page) main>.section {
+    min-height:var(--screen-space); padding-top:clamp(22px,3svh,38px); padding-bottom:clamp(22px,3svh,38px);
+    display:flex; flex-direction:column; justify-content:center; gap:0;
+  }
+  #home.hero { height:calc(100svh - 80px); min-height:0; display:flex; flex-direction:column; }
+  #home .hero-content { flex:1; padding-top:clamp(25px,4svh,55px); padding-bottom:15px; }
+  #home h1 { font-size:clamp(54px,8.8svh,96px); line-height:1.04; margin:18px 0; }
+  #home .hero-intro { margin-bottom:0; line-height:1.55; }
+  #home .hero-actions { margin-top:20px; }
+  #home .hero-bottom { flex:none; font-size:8px; }
+  #home .hero-stats { flex:none; padding-top:14px; padding-bottom:14px; }
+  #home .hero-stats strong { font-size:32px; }
+  #home .hero-stats strong.iso { font-size:23px; }
+  main>.section .section-heading { margin-bottom:20px; }
+  main>.section h2 { font-size:clamp(32px,4.8svh,50px); }
+  main>.section .eyebrow { margin-bottom:12px; }
+  #about .about-blueprint { min-height:0; }
+  #about .about-blueprint svg { height:clamp(175px,25svh,285px); }
+  #about .blueprint-top { padding:11px 18px; }
+  #about .blueprint-caption { padding-bottom:12px; }
+  #about .about-company-copy p { font-size:12px; line-height:1.6; margin-bottom:9px; }
+  #about .about-company-copy .about-intro { margin:12px 0; font-size:16px; }
+  #about .about-strengths { margin:12px 0; }
+  #about .purpose-grid { margin-top:20px; }
+  #about .purpose-card { padding:16px; }
+  #about .purpose-card h3 { font-size:17px; margin-bottom:7px; }
+  #about .purpose-card p:last-child { font-size:11px; }
+  #about .about-footprint { margin-top:16px; padding-top:14px; }
+  #engineering .machine-layout { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); }
+  #engineering .machine-visual { min-height:0; }
+  #engineering .process-video { flex:none; height:auto; aspect-ratio:16/9; max-height:calc(100svh - 280px); object-fit:cover; }
+  #engineering .machine-details { padding:20px; }
+  #engineering .machine-details h3 { font-size:28px; margin-bottom:12px; }
+  #engineering .machine-reading strong { font-size:52px; }
+  #engineering .console-header,#engineering .console-bottom { padding:12px 18px; }
+  #capabilities .cap-grid { gap:14px; }
+  #capabilities .cap-photo { height:clamp(95px,14svh,170px); }
+  #capabilities .cap-body { padding:14px 16px; }
+  #capabilities .cap-body h3 { font-size:18px; margin-bottom:7px; }
+  #capabilities .cap-body p { font-size:12px; line-height:1.45; }
+  #capabilities .card-action { margin-top:9px; padding-top:7px; }
+  #industries .industry-bento { grid-auto-rows:clamp(115px,19svh,180px); }
+  #industries .industry-card-copy { padding:12px 16px; }
+  #products .product-photo { height:clamp(160px,27svh,300px); }
+  #products .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #infrastructure .facility-panel { min-height:0; }
+  #infrastructure .facility-panel img { height:clamp(220px,36svh,390px); }
+  #infrastructure .facility-tabs { margin-bottom:20px; }
+  main>#quality.section { display:grid; grid-template-columns:1fr 1.1fr; align-content:center; align-items:center; gap:5%; }
+  #quality .engineering-dashboard { padding:16px; }
+  #quality .plant-prime h3 { font-size:22px; }
+  #quality .plant-machine-photo { height:clamp(100px,17svh,170px); margin:10px 0; }
+  #quality .plant-prime p { margin-top:8px; }
+  #quality>div:last-child { padding-top:0; }
+  #clients .client-grid { gap:14px; }
+  #clients .client-logo { min-height:75px; }
+  #clients .client-logo img { max-height:120px; }
+  #testimonials .testimonial-card { padding:22px; }
+  main>#contact.section { display:grid; grid-template-columns:.85fr 1.15fr; align-content:center; align-items:center; gap:6%; }
+  #contact form { padding:20px 24px; }
+  #contact form h3 { margin-bottom:12px; }
+  #contact form label { margin-bottom:10px; }
+  #contact input,#contact select { padding:8px 0; }
+  #contact textarea { min-height:60px; height:60px; }
+  #contact .form-note { margin-bottom:0; }
+  #contact #form-status:empty { display:none; }
+}
+@media(max-width:760px) {
+  #home.hero { min-height:0; }
+  #home .hero-content { padding-top:40px; padding-bottom:32px; }
+  #home .hero-bottom { gap:10px; font-size:7px; flex-wrap:wrap; }
+  #home .hero-stats { padding:20px 6%; gap:20px 0; }
+  #home .hero-stats strong { font-size:25px; }
+  #home .hero-stats strong.iso { font-size:17px; }
+}

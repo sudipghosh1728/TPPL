@@ -28,25 +28,29 @@ document.querySelectorAll('.nav-group>button').forEach(button=>button.addEventLi
 const footerLinks=document.querySelector('.footer-links');
 if(footerLinks){const enquiry=footerLinks.querySelector('a[href="#contact"]');for(const [href,label] of [['#infrastructure','Infrastructure'],['#quality','Quality'],['#testimonials','Testimonials']]){if(!footerLinks.querySelector(`a[href="${href}"]`)){const link=document.createElement('a');link.href=href;link.textContent=label;footerLinks.insertBefore(link,enquiry);}}}
 document.querySelector('#year').textContent=new Date().getFullYear();
+// Keep optional specifications together without discarding any enquiry fields.
+const enquiryForm = document.querySelector('#enquiry-form');
+const specificationDisclosure = document.createElement('details');
+specificationDisclosure.className = 'enquiry-specifications';
+const specificationSummary = document.createElement('summary');
+specificationSummary.textContent = 'Add technical specifications, quantity & delivery';
+specificationDisclosure.append(specificationSummary);
+const specificationFields = document.querySelector('#service-fields');
+enquiryForm.insertBefore(specificationDisclosure, specificationFields);
+specificationDisclosure.append(
+  enquiryForm.querySelector('[name="material"]').closest('.form-row'),
+  specificationFields,
+  enquiryForm.querySelector('[name="delivery"]').closest('.form-row')
+);
 const heroVideo = document.querySelector('.hero-video');
-const slideToggle = document.querySelector('.slide-toggle');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-let heroVideoPaused = reducedMotion.matches;
 function updateHeroVideo() {
-  slideToggle.textContent = heroVideoPaused ? 'Play video' : 'Pause video';
-  slideToggle.setAttribute('aria-label', `${heroVideoPaused ? 'Play' : 'Pause'} homepage manufacturing video`);
-  if (heroVideoPaused || document.hidden) {
+  if (reducedMotion.matches || document.hidden) {
     heroVideo.pause();
     return;
   }
-  heroVideo.play().catch(() => {
-    heroVideoPaused = true;
-    slideToggle.textContent = 'Play video';
-    slideToggle.setAttribute('aria-label', 'Play homepage manufacturing video');
-  });
+  heroVideo.play().catch(() => {});
 }
-slideToggle.addEventListener('click', () => { heroVideoPaused = !heroVideoPaused; updateHeroVideo(); });
-heroVideo.addEventListener('click', () => slideToggle.click());
-reducedMotion.addEventListener('change', () => { heroVideoPaused = reducedMotion.matches; updateHeroVideo(); });
+reducedMotion.addEventListener('change', updateHeroVideo);
 document.addEventListener('visibilitychange', updateHeroVideo);
 updateHeroVideo();
