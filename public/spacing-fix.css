@@ -159,3 +159,51 @@
   .button,.filters button,.contact button[type=submit],.standalone-enquiry button[type=submit]{border-radius:999px!important}
 }
 @media(prefers-reduced-motion:reduce){.blueprint-scan{animation:none}}
+
+/* Bento industry portfolio */
+.industries{position:relative;background:#eef4f8;overflow:hidden}
+.industries::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#163a5b07 1px,transparent 1px),linear-gradient(90deg,#163a5b07 1px,transparent 1px);background-size:38px 38px;pointer-events:none}
+.industries>.section-heading,.industry-bento{position:relative}
+.industries>.section-heading>p{max-width:390px;padding-left:18px;border-left:2px solid var(--orange)}
+.industry-bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:158px;gap:14px}
+.industry-bento .industry-card{position:relative;display:block;min-width:0;border-radius:18px;overflow:hidden;background:#123651;box-shadow:0 12px 28px #163a5b18;isolation:isolate;transform:translateZ(0);transition:transform .35s ease,box-shadow .35s ease}
+.industry-bento .industry-card:first-child{grid-column:span 2;grid-row:span 2}
+.industry-bento .industry-card:nth-child(7){grid-column:span 2}
+.industry-bento .industry-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.03);transition:transform .75s cubic-bezier(.2,.7,.2,1),filter .4s ease}
+.industry-bento .industry-card::before{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(180deg,transparent 20%,#071f33e8 100%)}
+.industry-bento .industry-card::after{content:'';position:absolute;z-index:3;inset:10px;border:1px solid #ffffff00;border-radius:11px;transition:border-color .3s ease,inset .3s ease}
+.industry-card-copy{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:17px 18px;color:#fff}
+.industry-card-copy small{display:block;color:#ff9d4b;font-size:7px;font-weight:750;letter-spacing:1.25px;margin-bottom:5px}
+.industry-card-copy strong{display:block;font:600 20px/1.1 Manrope,Arial,sans-serif;letter-spacing:-.55px}
+.industry-card-copy span{display:block;color:#c3d8e6;font-size:9px;margin-top:3px}
+.industry-card-copy b{position:absolute;right:16px;bottom:17px;padding:6px 9px;border:1px solid #ffffff45;border-radius:999px;background:#ffffff16;backdrop-filter:blur(12px);color:#fff;font-size:7px;font-weight:650;letter-spacing:.4px;opacity:0;transform:translateY(7px);transition:opacity .3s,transform .3s,background .3s}
+.industry-bento .industry-card:first-child .industry-card-copy{padding:23px 24px}
+.industry-bento .industry-card:first-child .industry-card-copy strong{font-size:32px}
+.industry-bento .industry-card:first-child .industry-card-copy span{font-size:10px}
+.industry-bento .industry-card:first-child .industry-card-copy b{right:23px;bottom:23px}
+.industry-bento .industry-card:hover,.industry-bento .industry-card:focus-visible{transform:translateY(-5px);box-shadow:0 20px 40px #163a5b2d;outline:0}
+.industry-bento .industry-card:hover img,.industry-bento .industry-card:focus-visible img{transform:scale(1.065);filter:saturate(1) contrast(1.05)}
+.industry-bento .industry-card:hover::after,.industry-bento .industry-card:focus-visible::after{inset:8px;border-color:#ffffff57}
+.industry-bento .industry-card:hover .industry-card-copy b,.industry-bento .industry-card:focus-visible .industry-card-copy b{opacity:1;transform:translateY(0);background:#f58220e8;color:#102f4a;border-color:#ffac65}
+
+@media(min-width:1600px){.industry-bento{grid-auto-rows:175px}}
+@media(max-width:1050px){
+  .industry-bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:160px}
+  .industry-bento .industry-card:first-child{grid-column:span 2;grid-row:span 1}
+  .industry-bento .industry-card:nth-child(7){grid-column:span 1}
+  .industry-bento .industry-card:last-child{grid-column:span 2}
+  .industry-card-copy b{display:none}
+}
+@media(max-width:620px){
+  .industry-bento{grid-auto-rows:145px;gap:10px}
+  .industry-bento .industry-card{border-radius:14px}
+  .industry-bento .industry-card:first-child{grid-row:span 1}
+  .industry-bento .industry-card:nth-child(7){grid-column:span 1}
+  .industry-bento .industry-card:last-child{grid-column:span 2}
+  .industry-card-copy{padding:13px}
+  .industry-bento .industry-card:first-child .industry-card-copy{padding:13px}
+  .industry-bento .industry-card:first-child .industry-card-copy strong,.industry-card-copy strong{font-size:16px}
+  .industry-card-copy small{font-size:6px;letter-spacing:.8px}
+  .industry-card-copy span{font-size:8px}
+  .industries>.section-heading>p{padding-left:12px}
+}
