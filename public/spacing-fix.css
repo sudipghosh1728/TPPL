@@ -1,3 +1,86 @@
 /* Keep multi-word navigation headings clearly separated at every size. */
 .detail-tree h2{word-spacing:.28em;letter-spacing:0;white-space:normal}
 .detail-tree h2::first-line{word-spacing:.28em}
+
+/* Compact vertical rhythm across the corporate website. */
+.hero{min-height:520px;height:min(620px,calc(100vh - 100px))}
+.hero-content{padding-top:50px;padding-bottom:72px}
+.stats{padding-top:18px;padding-bottom:18px}
+.section{padding-top:40px;padding-bottom:40px}
+.section-heading{margin-bottom:22px;gap:20px}
+.about{padding-top:40px;padding-bottom:40px}
+.about-main{gap:4%}
+.about-plant{height:320px}
+.purpose-grid{margin-top:24px;gap:16px}
+.purpose-card{padding:20px}
+.about-footprint{padding-top:20px;margin-top:20px}
+.mechanical{padding-top:30px;padding-bottom:34px}
+.machine-details{padding:22px}
+.capabilities,.products,.facilities,.quality{padding-top:40px;padding-bottom:40px}
+.industries{padding-top:32px;padding-bottom:34px}
+.clients{padding-top:32px;padding-bottom:32px}
+.clients .section-heading{margin-bottom:18px}
+.testimonials{padding-top:36px;padding-bottom:36px}
+.testimonial-card{padding:22px 25px}
+.contact{padding-top:38px;padding-bottom:38px}
+.contact form{padding:24px}
+.footer-top{padding-bottom:22px}
+.corporate-footer{padding-top:26px}
+.footer-grid{padding-bottom:24px;gap:28px}
+
+.inner-hero{padding:42px 7% 38px}
+.inner-hero h1{font-size:clamp(36px,4.5vw,58px);margin-bottom:10px}
+.page-section{padding:32px 7% 42px}
+.catalog-grid{gap:14px}
+.catalog-card>img{height:200px}
+.catalog-card>div{padding:16px}
+.service-index{gap:14px}
+.service-index>a{min-height:215px}
+.service-index a>div{padding:22px}
+.detail-layout{grid-template-columns:230px minmax(0,850px);gap:28px}
+.detail-tree h2{padding:15px}
+.detail-tree a{padding:7px 15px}
+.detail-content{padding:24px}
+.detail-cover{height:330px;margin-bottom:20px}
+.detail-image{height:310px;margin:19px 0 14px}
+.detail-content h2{margin:24px 0 9px}
+.detail-content h3{margin:18px 0 8px}
+.table-scroll{margin:13px 0 19px}
+.detail-cta{padding:20px;margin-top:25px}
+.gallery-grid{gap:10px}
+.gallery-grid button{height:200px}
+.video-gallery{margin-top:30px}
+.contact-page{gap:38px}
+.contact-directory>div{padding:13px 0}
+.standalone-enquiry{padding:24px}
+.standalone-enquiry label{margin-bottom:12px}
+.standalone-enquiry textarea{height:92px;min-height:92px}
+.mission-grid{margin:27px 0 34px;gap:16px}
+.mission-grid article{padding:23px}
+.branch-grid{gap:14px}
+.branch-grid article>div{padding:18px}
+.page-footer{padding:26px 7%;gap:26px}
+
+@media(max-width:760px){
+  .hero{min-height:550px;height:auto}
+  .section{padding-top:30px;padding-bottom:30px}
+  .section-heading{margin-bottom:18px}
+  .about,.capabilities,.products,.facilities,.quality,.clients,.testimonials,.contact{padding-top:30px;padding-bottom:30px}
+  .about-plant{height:225px}
+  .purpose-grid{margin-top:20px}
+  .purpose-card{padding:17px}
+  .inner-hero{padding:32px 6% 30px}
+  .inner-hero h1{font-size:34px;letter-spacing:-1.5px}
+  .page-section{padding:24px 6% 32px}
+  .catalog-grid,.service-index{gap:12px}
+  .catalog-card>img{height:175px}
+  .detail-layout{grid-template-columns:1fr;gap:18px}
+  .detail-tree{position:static;top:auto}
+  .detail-content{padding:18px}
+  .detail-cover{height:260px}
+  .detail-image{height:240px}
+  .contact-page{gap:24px}
+  .standalone-enquiry{padding:19px}
+  .standalone-enquiry textarea{height:88px;min-height:88px}
+  .page-footer{padding:24px 6%;gap:22px}
+}
