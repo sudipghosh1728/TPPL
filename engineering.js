@@ -22,6 +22,78 @@ const serviceFields={
  'General manufacturing enquiry':[['Scope of work','Describe the processes required']]
 };
 const service=document.querySelector('select[name=service]');service.addEventListener('change',()=>{const fields=serviceFields[service.value]||[];document.querySelector('#service-fields').innerHTML=fields.length?`<fieldset class="technical-fields"><legend>${service.value.replaceAll('&','&amp;')} requirements</legend>${fields.map(([label,placeholder],i)=>`<label>${label}<input name="spec_${i}" data-label="${label}" placeholder="${placeholder}" maxlength="180"></label>`).join('')}</fieldset>`:'';});
-document.querySelector('#enquiry-form').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;const data=new FormData(form);const labels={name:'Name',company:'Company',email:'Email',phone:'Phone',service:'Service',industry:'Industry',material:'Material / grade',quantity:'Quantity (pieces)',delivery:'Required delivery',drawing:'Drawing reference',message:'Project details'};const lines=[];for(const [key,value] of data){if(!String(value).trim())continue;const label=labels[key]||form.elements.namedItem(key)?.dataset.label||key;lines.push(`${label}: ${value}`);}const mail=`mailto:vinayak@tpplpune.com?subject=${encodeURIComponent(`Project enquiry: ${data.get('service')} — ${data.get('company')}`)}&body=${encodeURIComponent(lines.join('\n\n'))}`;window.location.href=mail;document.querySelector('#form-status').textContent='Your project draft is ready to open in your email app. Attach drawings there and send your enquiry. If no app opens, contact vinayak@tpplpune.com.';});
+document.querySelector('#enquiry-form').addEventListener('submit', e => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const formStatus = document.querySelector('#form-status');
+  const formData = new FormData(form);
+  const payload = {};
+
+  for (const [key, value] of formData) {
+    if (!String(value).trim()) continue;
+    payload[key] = String(value).trim();
+  }
+
+  const serviceName = String(payload.service || 'General manufacturing enquiry');
+  const companyName = String(payload.company || '');
+  const labels = {
+    name: 'Name',
+    company: 'Company',
+    email: 'Email',
+    phone: 'Phone',
+    service: 'Service',
+    industry: 'Industry',
+    material: 'Material / grade',
+    quantity: 'Quantity (pieces)',
+    delivery: 'Required delivery',
+    drawing: 'Drawing reference',
+    message: 'Project details'
+  };
+
+  const lines = [];
+  for (const [key, value] of Object.entries(payload)) {
+    const label = labels[key] || key;
+    lines.push(`${label}: ${value}`);
+  }
+
+  const subject = `Project enquiry: ${serviceName}${companyName ? ` — ${companyName}` : ''}`;
+  const mail = `mailto:vinayak@tpplpune.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n\n'))}`;
+  const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent('vinayak@tpplpune.com')}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n\n'))}`;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton ? submitButton.textContent : 'Prepare project enquiry';
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Opening mail draft…';
+  }
+
+  if (formStatus) {
+    formStatus.textContent = 'Opening your email draft…';
+  }
+
+  window.location.href = gmail;
+
+  setTimeout(async () => {
+    try {
+      await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...payload, recipient: 'vinayak@tpplpune.com' })
+      });
+    } catch (error) {
+      // Ignore backend errors here; the draft-open action remains the primary user flow.
+    }
+
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
+
+    if (formStatus) {
+      formStatus.textContent = 'Your project draft is ready to open in your email app. If no app opens, the browser may have opened a webmail draft instead. You can also email vinayak@tpplpune.com directly.';
+    }
+  }, 250);
+});
 
 document.querySelectorAll("[data-industry]").forEach(card=>card.addEventListener("click",()=>{document.querySelector("input[name=industry]").value=card.dataset.industry;}));

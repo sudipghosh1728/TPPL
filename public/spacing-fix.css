@@ -1,0 +1,3 @@
+/* Keep multi-word navigation headings clearly separated at every size. */
+.detail-tree h2{word-spacing:.28em;letter-spacing:0;white-space:normal}
+.detail-tree h2::first-line{word-spacing:.28em}

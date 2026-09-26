@@ -1,0 +1,16 @@
+{
+  "created": "2026-09-26T08:26:20.046Z",
+  "assetRoot": "public/assets",
+  "mediaFiles": 130,
+  "images": 126,
+  "videos": 4,
+  "mappedOriginalWebsiteAssets": 76,
+  "missingMapped": [],
+  "remoteMediaInRenderedDocuments": [],
+  "sourceUrlsRetainedAsMetadata": true,
+  "featuredProcessVideo": {
+    "file": "public/assets/videos/tppl-machinery-showcase.mp4",
+    "bytes": 11792113,
+    "sha256": "c0276e045e97cd7338f87252402503916a64f738c1c814bf1d2da3b0ff476961"
+  }
+}

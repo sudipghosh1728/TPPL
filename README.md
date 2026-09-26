@@ -51,3 +51,15 @@ Additional browser checks passed for all five process modes, animation pause, re
 Testimonials reproduce the Nilesh and Mahendra feedback already published on the existing company homepage, without invented ratings or affiliations. The footer includes verified contact details, internal navigation, brochure download and the existing Google Maps embed. Map availability requires access to Google Maps. Browser checks cover all four plants, equipment image loading, selector synchronization, testimonials, map URL and responsive widths.
 
 About Us section: company overview, mission and vision adapted from https://www.tpplpune.com/about-us.php, supplemented with the four-unit manufacturing footprint from the supplied brochure. Local facility and machinery photography is used. Header and footer About Us links target this section.
+
+## Existing website migration
+
+The existing website was crawled on 2026-09-26. The new multi-page structure includes 20 product entries, four service branches with their process descriptions and technical tables, 23 gallery images, three source videos, all 25 client logos, four manufacturing branches, and a standalone contact page. Product and service navigation trees retain the order used by the existing website.
+
+The source website currently returns errors for `valve-body.php`, the capitalized `Machining-facilities.php` menu URL, and `nde-end-shield-for-to-power.php`. The available lowercase machining page was migrated. Valve Body remains visible in the product tree with a source-unavailable notice; specifications were not invented. Several source product image URLs also return 404, so their verified text and tables are shown without those broken images.
+
+Run `node scripts/build-content-pages.mjs` after updating `content/site-content.json` or `content/assets.json`. Vite builds the homepage, six section pages, 20 product pages and four service pages. The full browser audit is in `review/full-site-check.mjs`.
+
+## Offline media archive
+
+Every photograph and video used by the website is stored below `public/assets`, so published pages do not depend on the original TPPL website for media delivery. `content/assets.json` preserves the source URL to local-file mapping for migrated media. The homepage process explorer uses the original TPPL machinery clip at `public/assets/videos/tppl-machinery-showcase.mp4`; the complete migrated source collection remains in `public/assets/migrated`.
