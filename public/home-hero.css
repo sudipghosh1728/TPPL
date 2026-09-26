@@ -1,0 +1,80 @@
+/* Homepage navigation and film form one continuous hero surface. */
+body>.topbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 31;
+  background: rgb(12 46 71 / 72%);
+  border-bottom: 1px solid rgb(255 255 255 / 13%);
+  backdrop-filter: blur(7px);
+}
+
+body>header {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: linear-gradient(180deg, rgb(8 36 59 / 82%), rgb(8 36 59 / 55%) 72%, transparent);
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+  color: #fff;
+  box-shadow: none;
+}
+
+body>header .brand {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+body>header .brand-logo {
+  background: transparent;
+  filter: drop-shadow(0 1px 0 #fff) drop-shadow(0 0 7px rgb(255 255 255 / 53%));
+}
+
+body>header nav>a,
+body>header .nav-group>a {
+  color: #fff;
+  text-shadow: 0 1px 6px #061827;
+}
+
+body>header nav>a:hover,
+body>header .nav-group>a:hover {
+  color: #ff9d48;
+}
+
+body>header .nav-cta {
+  background: rgb(10 42 68 / 65%);
+  border-color: rgb(255 255 255 / 61%);
+  color: #fff;
+}
+
+body>header .nav-cta:hover {
+  background: #f58220;
+  color: #102e49;
+}
+
+body>header .nav-tree>a {
+  color: #163a5b;
+  text-shadow: none;
+}
+
+body>main>.hero {
+  height: min(760px, 100svh);
+  min-height: 620px;
+  max-height: 850px;
+}
+
+body>main>.hero .hero-content {
+  padding-top: 145px;
+}
+
+@media (max-width: 760px) {
+  body>.topbar { height: 24px; }
+  body>header { top: 24px; }
+  body>header nav.open { background: #fff; color: #163a5b; }
+  body>header nav.open>a,
+  body>header nav.open .nav-group>a { color: #163a5b; text-shadow: none; }
+  body>header nav.open .nav-cta { background: #163a5b; border-color: #163a5b; color: #fff; }
+  body>header .menu-toggle { color: #fff; border-color: rgb(255 255 255 / 55%); background: rgb(10 42 68 / 48%); }
+  body>main>.hero { height: auto; min-height: 650px; }
+  body>main>.hero .hero-content { padding-top: 125px; }
+}

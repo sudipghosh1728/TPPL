@@ -28,30 +28,29 @@ const productOrder = [
   ['platform-for', 'Platform'],
   ['profile-flange', 'Profile Flange'],
 ];
-// Several product-detail images on the legacy website now return 404. Use
-// distinct TPPL-owned product and gallery photographs preserved in this repo
-// so the catalog remains useful and fully available offline.
+// Distinct local TPPL product and manufacturing photographs keep the catalog
+// useful and fully available offline.
 const productImageFallbacks = {
   'stator-frame-for-tdps-stator-frame': '/assets/product-1.webp',
   'stator-frame': '/assets/product-2.webp',
   'nde-end-shield-for-td-power': '/assets/product-3.webp',
   'de-end-shield-for-td-powers': '/assets/product-4.webp',
   'compression-plate': '/assets/product-5.webp',
-  'compression-laser-cut': '/assets/migrated/df507079f2-laser-cutting.jpg',
-  'gear-case': '/assets/migrated/7e3275882d-12.jpg',
-  'tool-drum': '/assets/migrated/53cb939825-3.jpg',
-  'stator-frame-for-td-power': '/assets/migrated/35a5644f12-1.jpg',
-  'roller-for-welding': '/assets/migrated/4d6ecd738e-24.jpg',
-  'machine-base': '/assets/migrated/f082c79d77-7.jpg',
-  'valve-body': '/assets/migrated/d05fbf47b4-9.jpg',
-  'material-handling-product': '/assets/migrated/21f2aef92b-2.jpg',
-  'vaccum-chamber': '/assets/migrated/9e65bff941-5.jpg',
-  'cnc-cutting-and-bending-part': '/assets/migrated/7a72782c32-cnc-press-break.jpg',
-  'end-shield': '/assets/migrated/798fd4f3ae-6.jpg',
-  'valve-plate': '/assets/migrated/92da405190-15.jpg',
-  'water-jacket': '/assets/migrated/32d6f9c673-20.jpg',
-  'platform-for': '/assets/migrated/55b1430c08-4.jpg',
-  'profile-flange': '/assets/migrated/92212fa78a-11.jpg',
+  'compression-laser-cut': '/assets/library/df507079f2-laser-cutting.jpg',
+  'gear-case': '/assets/library/7e3275882d-12.jpg',
+  'tool-drum': '/assets/library/53cb939825-3.jpg',
+  'stator-frame-for-td-power': '/assets/library/35a5644f12-1.jpg',
+  'roller-for-welding': '/assets/library/4d6ecd738e-24.jpg',
+  'machine-base': '/assets/library/f082c79d77-7.jpg',
+  'valve-body': '/assets/library/d05fbf47b4-9.jpg',
+  'material-handling-product': '/assets/library/21f2aef92b-2.jpg',
+  'vaccum-chamber': '/assets/library/9e65bff941-5.jpg',
+  'cnc-cutting-and-bending-part': '/assets/library/7a72782c32-cnc-press-break.jpg',
+  'end-shield': '/assets/library/798fd4f3ae-6.jpg',
+  'valve-plate': '/assets/library/92da405190-15.jpg',
+  'water-jacket': '/assets/library/32d6f9c673-20.jpg',
+  'platform-for': '/assets/library/55b1430c08-4.jpg',
+  'profile-flange': '/assets/library/92212fa78a-11.jpg',
 };
 const serviceOrder = [
   ['cutting-facilities', 'Profile Cutting'],
@@ -99,12 +98,6 @@ const siteData = {
   clients: mapEntry(clientsSource),
   about: mapEntry(aboutSource),
   contact: mapEntry(contactSource),
-  audit: {
-    checkedRoutes: 32,
-    checkedAt: '2026-09-26',
-    unavailableSourcePages: ['Machining-facilities.php', 'valve-body.php', 'nde-end-shield-for-to-power.php'],
-    note: 'The lowercase machining page is available and has been migrated. Valve Body has no accessible detail page on the source website.',
-  },
 };
 fs.mkdirSync(path.join(root, 'public/content'), { recursive: true });
 fs.writeFileSync(path.join(root, 'public/content/site-data.json'), JSON.stringify(siteData, null, 2));
