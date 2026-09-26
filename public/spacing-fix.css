@@ -85,69 +85,77 @@
   .page-footer{padding:24px 6%;gap:22px}
 }
 
-/* Interactive industries showcase */
-.industries{position:relative;overflow:hidden;background:#edf4f8;padding-top:42px;padding-bottom:42px}
-.industries::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#163a5b08 1px,transparent 1px),linear-gradient(90deg,#163a5b08 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 62%);pointer-events:none}
-.industries-heading{position:relative;align-items:end;margin-bottom:24px}
-.industries-heading h2{font-size:clamp(36px,4.4vw,64px);line-height:1.02}
-.industry-heading-note{display:flex;align-items:flex-start;gap:18px;max-width:420px;padding-left:20px;border-left:2px solid var(--orange)}
-.industry-heading-note>span{flex:0 0 auto;color:var(--orange);font-size:9px;font-weight:750;letter-spacing:1.5px;padding-top:4px}
-.industry-heading-note p{font-size:12px;line-height:1.55;margin:0}
-.industry-showcase{position:relative;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(320px,.85fr);min-height:340px;background:#102f4a;box-shadow:0 20px 50px #163a5b20;overflow:hidden}
-.industry-feature-media{position:relative;min-height:340px;overflow:hidden}
-.industry-feature-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .25s ease,transform .7s ease;transform:scale(1.01)}
-.industry-feature-media>img.changing{opacity:.55;transform:scale(1.04)}
-.industry-image-shade{position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,#102f4a 100%),linear-gradient(0deg,#102f4a66,transparent 45%)}
-.industry-image-label{position:absolute;left:22px;bottom:20px;display:flex;align-items:center;gap:11px;color:#fff}
-.industry-image-label span{display:grid;place-items:center;width:44px;height:44px;background:var(--orange);font-family:Manrope,Arial,sans-serif;font-size:19px;font-weight:700}
-.industry-image-label small{font-size:8px;font-weight:700;letter-spacing:1.8px}
-.industry-feature-copy{position:relative;display:flex;flex-direction:column;justify-content:center;padding:32px 34px 28px;color:#fff;overflow:hidden}
-.industry-feature-copy::before{content:'';position:absolute;right:-74px;top:-90px;width:230px;height:230px;border:1px solid #ffffff16;border-radius:50%;box-shadow:0 0 0 28px #ffffff07,0 0 0 56px #ffffff05;pointer-events:none}
-.industry-kicker{position:relative;color:#f7a25a;font-size:8px;font-weight:750;letter-spacing:1.8px;margin:0 0 11px}
-.industry-feature-copy h3{position:relative;font-size:clamp(32px,3.2vw,48px);line-height:1.04;letter-spacing:-1.8px;font-weight:500;margin:0 0 14px;max-width:360px}
-.industry-feature-copy>p:not(.industry-kicker){position:relative;color:#c6d8e6;font-size:12px;line-height:1.65;margin:0 0 17px;max-width:390px}
-.industry-capabilities{position:relative;display:flex;gap:7px;flex-wrap:wrap;margin-bottom:19px}
-.industry-capabilities span{border:1px solid #ffffff2e;color:#e4eef5;padding:5px 8px;font-size:8px;letter-spacing:.35px}
-.industry-enquire{position:relative;align-self:flex-start;padding:11px 16px;min-width:190px;justify-content:center;gap:0}
-.industry-instruction{position:absolute;right:22px;bottom:17px;color:#8facbf;font-size:7px;letter-spacing:1.2px;text-transform:uppercase}
-.industry-selector{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));background:#fff;border:1px solid #cad9e4;border-top:0}
-.industry-tab{position:relative;min-width:0;height:94px;border:0;border-right:1px solid #dbe5ec;background:#fff;color:var(--ink);padding:0;overflow:hidden;text-align:left;transition:background .25s,color .25s}
-.industry-tab:last-child{border-right:0}
-.industry-tab img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);filter:saturate(.65);transition:opacity .3s,transform .55s}
-.industry-tab::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.industry-tab span{position:relative;z-index:1;display:flex;height:100%;flex-direction:column;justify-content:flex-end;padding:12px 10px}
-.industry-tab small{font-size:7px;letter-spacing:1px;color:#71879a;margin-bottom:4px}
-.industry-tab strong{font-family:Manrope,Arial,sans-serif;font-size:11px;line-height:1.15;font-weight:650}
-.industry-tab:hover img,.industry-tab:focus-visible img,.industry-tab.active img{opacity:.94;transform:scale(1)}
-.industry-tab:hover span,.industry-tab:focus-visible span,.industry-tab.active span{background:linear-gradient(0deg,#102f4add,transparent 95%);color:#fff}
-.industry-tab:hover small,.industry-tab:focus-visible small,.industry-tab.active small{color:#f9b378}
-.industry-tab:hover::after,.industry-tab:focus-visible::after,.industry-tab.active::after{transform:scaleX(1)}
-.industry-tab:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
+/* Blueprint-led company introduction */
+.about-blueprint{position:relative;display:grid;grid-template-rows:auto 1fr auto auto;min-height:460px;padding:0!important;background:radial-gradient(circle at 50% 42%,#1d5779 0,#123752 46%,#0d2a43 100%);color:#dcecf6;border:1px solid #ffffff24;border-radius:22px;overflow:hidden;box-shadow:0 24px 55px #102f4a26}
+.blueprint-top{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;border-bottom:1px solid #ffffff1f;font-size:7px;letter-spacing:1.35px}
+.blueprint-top b{font-weight:650;color:#9ac4dd}.blueprint-top i{display:inline-block;width:6px;height:6px;margin-right:7px;border-radius:50%;background:#f58220;box-shadow:0 0 0 5px #f582201e,0 0 15px #f58220}
+.about-blueprint svg{display:block;width:100%;height:295px;color:#9bc2d9}
+.blueprint-dimensions,.blueprint-callouts{fill:none;stroke:#8bb5ce;stroke-width:1}
+.blueprint-dimensions text,.blueprint-callouts text{fill:#b8d4e5;stroke:none;font:8px monospace;letter-spacing:1px}
+.blueprint-component{fill:#0e3049;stroke:url(#about-metal);stroke-width:2}
+.blueprint-component>path{stroke:#6e9db9;stroke-width:1;stroke-dasharray:4 6}
+.blueprint-bolts circle{fill:#163f5c;stroke:#f58220;stroke-width:1.5}
+.blueprint-scan{fill:none;stroke:#f58220!important;stroke-width:5!important;stroke-linecap:round;stroke-dasharray:45 340!important;filter:drop-shadow(0 0 5px #f58220);animation:blueprint-scan 5s linear infinite}
+.blueprint-callouts circle{fill:#f58220;stroke:none}
+.blueprint-caption{padding:0 22px 16px}.blueprint-caption span{display:block;color:#f59a4d;font-size:7px;letter-spacing:1.55px;margin-bottom:4px}.blueprint-caption strong{display:block;color:#fff;font:500 18px/1.3 Manrope,Arial,sans-serif;letter-spacing:-.35px}
+.blueprint-metrics{display:grid;grid-template-columns:repeat(3,1fr);background:#ffffff0b;border-top:1px solid #ffffff1c}
+.blueprint-metrics>div{padding:12px 15px;border-right:1px solid #ffffff1c}.blueprint-metrics>div:last-child{border:0}.blueprint-metrics strong{display:block;color:#fff;font:600 18px/1.1 Manrope,Arial,sans-serif}.blueprint-metrics span{display:block;color:#8fb4ca;font-size:7px;margin-top:3px}
+@keyframes blueprint-scan{to{stroke-dashoffset:-385}}
 
-@media(max-width:980px){
-  .industry-showcase{grid-template-columns:1.25fr 1fr}
-  .industry-feature-copy{padding:28px 25px}
-  .industry-tab{height:86px}
-  .industry-tab span{padding:10px 7px}
-  .industry-tab strong{font-size:9px}
+/* Rounded glass controls and more expressive hover feedback */
+.button,.nav-cta,.filters button,.contact button[type=submit],.standalone-enquiry button[type=submit],.detail-cta a{border-radius:999px!important;box-shadow:inset 0 1px 0 #ffffff59,0 9px 24px #102f4a1c;backdrop-filter:blur(12px) saturate(135%);transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease!important}
+.button:hover,.button:focus-visible,.nav-cta:hover,.filters button:hover,.filters button:focus-visible,.contact button[type=submit]:hover,.standalone-enquiry button[type=submit]:hover,.detail-cta a:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 #ffffff78,0 14px 30px #102f4a2c}
+.button:active,.nav-cta:active,.filters button:active,.contact button[type=submit]:active,.standalone-enquiry button[type=submit]:active{transform:translateY(0) scale(.98)}
+.button.accent,.accent,.industry-enquire{background:linear-gradient(135deg,#ff9c49,#f27610)!important;color:#102f4a!important;border:1px solid #ffad67!important}
+.button.accent:hover,.accent:hover,.industry-enquire:hover{background:linear-gradient(135deg,#ffad67,#f58220)!important;box-shadow:inset 0 1px 0 #fff7,0 13px 30px #f5822040}
+.button.dark,.dark,.contact button[type=submit],.standalone-enquiry button[type=submit]{background:linear-gradient(135deg,#1d5478e8,#102f4af2)!important;color:#fff!important;border:1px solid #ffffff2b!important}
+.filters{gap:10px}.filters button{padding:9px 18px;border:1px solid #b8cedd;background:#ffffff9c;color:#315f7d}.filters button.active{background:linear-gradient(135deg,#1c597f,#123651);border-color:#315f7d;color:#fff}
+.process-tabs button,.measurement-tabs button,.machinery-toggle,.motion-toggle,.slide-toggle{border-radius:10px!important;transition:transform .22s ease,box-shadow .22s ease,background .22s ease!important;box-shadow:inset 0 1px 0 #fff3;backdrop-filter:blur(10px)}
+.process-tabs button:hover,.measurement-tabs button:hover,.machinery-toggle:hover,.motion-toggle:hover,.slide-toggle:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 #fff5,0 8px 18px #102f4a24}
+.gallery-dialog>button{border-radius:50%!important;box-shadow:0 8px 20px #0003}
+.facility-tabs button{border-radius:11px 11px 0 0;transition:background .25s,color .25s,transform .25s}.facility-tabs button:hover{background:#ffffff0a;transform:translateY(-2px)}
+.under-link{transition:color .25s,transform .25s}.under-link:hover{transform:translateX(4px)}
+
+/* Contact layouts sized for a single 16:9 desktop view */
+@media(min-width:901px){
+  .contact{min-height:min(680px,calc(100svh - 80px));align-items:center;padding-top:24px;padding-bottom:24px;gap:6%}
+  .contact h2{font-size:clamp(34px,3vw,46px)}
+  .contact>div>p:not(.eyebrow){margin-top:17px}
+  .contact-email{margin-top:22px}
+  .contact form{padding:19px 22px;border-radius:22px;border:1px solid #ffffffa8;box-shadow:0 22px 55px #163a5b15;background:#ffffffcf;backdrop-filter:blur(18px)}
+  .contact form h3{margin-bottom:12px}
+  .contact form label{margin-bottom:8px}
+  .contact input,.contact select,.contact textarea{padding:7px 0}
+  .contact textarea{min-height:52px;height:52px}
+  .contact .technical-fields{padding:11px;margin:3px 0 10px}
+  .contact .button{padding:12px 20px}
+  .contact p.form-note{margin-top:7px}
+  .inner-page[data-page="contact"] .inner-hero{display:none}
+  .inner-page[data-page="contact"] .contact-page{min-height:calc(100svh - 80px);align-items:center;padding-top:22px;padding-bottom:22px}
+  .inner-page[data-page="contact"] .contact-directory h2{font-size:32px;margin-bottom:12px}
+  .inner-page[data-page="contact"] .contact-directory>p:not(.source-label){margin-bottom:12px}
+  .inner-page[data-page="contact"] .contact-directory>div{padding:8px 0}
+  .inner-page[data-page="contact"] .standalone-enquiry{padding:17px 22px;border-radius:22px;border:1px solid #ffffffa8;box-shadow:0 22px 55px #163a5b15;background:#ffffffd9;backdrop-filter:blur(18px)}
+  .inner-page[data-page="contact"] .standalone-enquiry h2{font-size:25px;margin:5px 0 10px}
+  .inner-page[data-page="contact"] .standalone-enquiry label{margin-bottom:7px}
+  .inner-page[data-page="contact"] .standalone-enquiry input,.inner-page[data-page="contact"] .standalone-enquiry select,.inner-page[data-page="contact"] .standalone-enquiry textarea{padding:7px 0}
+  .inner-page[data-page="contact"] .standalone-enquiry textarea{height:54px;min-height:54px}
+  .inner-page[data-page="contact"] .standalone-technical{padding:10px;margin:3px 0 9px}
+  .inner-page[data-page="contact"] .standalone-enquiry button{padding:11px}
+  .inner-page[data-page="contact"] .standalone-enquiry .form-help{margin:6px 0 0}
+}
+
+@media(max-width:900px){
+  .about-blueprint{min-height:430px}
+  .about-blueprint svg{height:275px}
 }
 @media(max-width:760px){
-  .industries{padding-top:30px;padding-bottom:32px}
-  .industries-heading{align-items:flex-start}
-  .industry-heading-note{padding-left:14px;gap:10px}
-  .industry-showcase{grid-template-columns:1fr;min-height:0}
-  .industry-feature-media{min-height:235px}
-  .industry-image-shade{background:linear-gradient(0deg,#102f4acc,transparent 60%)}
-  .industry-feature-copy{padding:25px 20px 24px;min-height:265px;justify-content:flex-start}
-  .industry-feature-copy h3{font-size:34px;margin-bottom:10px}
-  .industry-feature-copy>p:not(.industry-kicker){margin-bottom:13px}
-  .industry-capabilities{margin-bottom:17px}
-  .industry-instruction{display:none}
-  .industry-selector{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;overscroll-behavior-inline:contain}
-  .industry-tab{flex:0 0 126px;height:84px;scroll-snap-align:start}
+  .about-blueprint{min-height:410px;border-radius:17px}
+  .about-blueprint svg{height:250px}
+  .blueprint-caption strong{font-size:16px}
+  .blueprint-metrics>div{padding:10px}
+  .about-links{padding-bottom:14px}
+  .purpose-grid{margin-top:28px}
+  .button,.filters button,.contact button[type=submit],.standalone-enquiry button[type=submit]{border-radius:999px!important}
 }
-@media(max-width:420px){
-  .industries-heading h2{font-size:34px}
-  .industry-feature-media{min-height:210px}
-  .industry-feature-copy{min-height:275px}
-}
+@media(prefers-reduced-motion:reduce){.blueprint-scan{animation:none}}

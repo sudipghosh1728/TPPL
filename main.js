@@ -13,47 +13,8 @@ function openDetail(title,image,description,specs=[]){document.querySelector('#d
 dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 document.querySelector('#cap-grid').innerHTML=capabilities.map((c,i)=>`<button class="cap-card" data-cap="${i}" aria-label="Explore ${c.title}"><div class="cap-photo"><img src="/assets/${c.image}.webp" alt="${c.title} equipment at TPPL" loading="lazy"></div><div class="cap-body"><h3>${c.title}</h3><p>${c.short}</p><span class="card-action">Explore capability</span></div></button>`).join('');
 document.querySelectorAll('[data-cap]').forEach(b=>b.addEventListener('click',()=>{const c=capabilities[Number(b.dataset.cap)];openDetail(c.title,`/assets/${c.image}.webp`,c.details,c.specs);}));
-function renderProducts(filter='all'){document.querySelector('#product-grid').innerHTML=products.filter(p=>filter==='all'||p.category===filter).map(p=>`<button class="product-card" data-product="${p.image}" aria-label="View ${p.name}"><div class="product-photo"><img src="/assets/product-${p.image}.webp" alt="${p.name} manufactured by TPPL" loading="lazy"></div><small>${p.label}</small><h3>${p.name}</h3><span class="card-action">View component</span></button>`).join('');document.querySelectorAll('[data-product]').forEach(b=>b.addEventListener('click',()=>{const p=products.find(p=>p.image===Number(b.dataset.product));openDetail(p.name,`/assets/product-${p.image}.webp`,p.description+' Contact our team to discuss your drawings, materials, dimensions and quantities.');}));}
-renderProducts();document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(t=>{t.classList.toggle('active',t===b);t.setAttribute('aria-pressed',String(t===b));});renderProducts(b.dataset.filter);}));
-const industries=[
- {name:'Paper',kicker:'CONTINUOUS PROCESS INDUSTRY',image:'paper.jpg',description:'Precision-built components and assemblies that support continuous production environments.',capabilities:['Fabricated frames','Precision machining','Surface finishing']},
- {name:'Textile',kicker:'PRODUCTION & PROCESS EQUIPMENT',image:'textile.jpg',description:'Engineered structures and machine components made for dependable, repeatable operation.',capabilities:['Profile cutting','Machine structures','Custom fabrication']},
- {name:'Automobile',kicker:'MOBILITY MANUFACTURING',image:'automobile.jpg',description:'Cut, formed and machined components delivered through a connected manufacturing workflow.',capabilities:['Laser cutting','CNC forming','Precision machining']},
- {name:'Steel',kicker:'HEAVY PROCESS ENGINEERING',image:'steel.jpg',description:'Robust fabricated assemblies and equipment components for demanding steel operations.',capabilities:['Heavy fabrication','Large machining','Surface treatment']},
- {name:'Infrastructure',kicker:'BUILT ENVIRONMENT',image:'infrastructure.jpg',description:'Fabricated steel components shaped around project drawings, schedules and site requirements.',capabilities:['Profile cutting','Structural fabrication','Project execution']},
- {name:'Power',kicker:'ENERGY & POWER SYSTEMS',image:'power.jpg',description:'Large fabricated and machined parts for equipment that keeps critical power systems moving.',capabilities:['Stator frames','Heavy machining','Quality control']},
- {name:'Machine Manufacturing',kicker:'INDUSTRIAL EQUIPMENT',image:'machine.jpg',description:'Machine bases, frames and precision parts built as an integrated extension of your production team.',capabilities:['Machine bases','Complex fabrication','CNC machining']},
- {name:'Nuclear Power',kicker:'CRITICAL ENERGY SYSTEMS',image:'nuclear.jpg',description:'Disciplined fabrication and dimensional control for exacting engineered applications.',capabilities:['Controlled fabrication','Dimensional checks','Documented quality']}
-];
-const industryTabs=[...document.querySelectorAll('.industry-tab')];
-const industryFeature={
- image:document.querySelector('#industry-feature-image'),number:document.querySelector('#industry-feature-number'),kicker:document.querySelector('#industry-feature-kicker'),title:document.querySelector('#industry-feature-title'),description:document.querySelector('#industry-feature-description'),capabilities:document.querySelector('#industry-feature-capabilities'),enquire:document.querySelector('.industry-enquire')
-};
-function selectIndustry(index,focus=false){
- const industry=industries[index];
- if(!industry||!industryFeature.image)return;
- industryFeature.image.classList.add('changing');
- requestAnimationFrame(()=>{
-  industryFeature.image.src=`/assets/industries/${industry.image}`;
-  industryFeature.image.alt=`${industry.name} industry facility`;
-  industryFeature.number.textContent=String(index+1).padStart(2,'0');
-  industryFeature.kicker.textContent=industry.kicker;
-  industryFeature.title.textContent=industry.name;
-  industryFeature.description.textContent=industry.description;
-  industryFeature.capabilities.innerHTML=industry.capabilities.map(item=>`<span>${item}</span>`).join('');
-  industryFeature.enquire.dataset.industry=industry.name;
-  industryFeature.enquire.setAttribute('aria-label',`Discuss a ${industry.name} industry requirement`);
-  industryTabs.forEach((tab,i)=>{const active=i===index;tab.classList.toggle('active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
-  if(focus)industryTabs[index].focus();
-  setTimeout(()=>industryFeature.image.classList.remove('changing'),80);
- });
-}
-industryTabs.forEach((tab,index)=>{
- tab.addEventListener('click',()=>selectIndustry(index));
- tab.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')selectIndustry(index);});
- tab.addEventListener('focus',()=>selectIndustry(index));
- tab.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%industries.length;else if(event.key==='ArrowLeft')next=(index-1+industries.length)%industries.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=industries.length-1;else return;event.preventDefault();selectIndustry(next,true);});
-});
+function renderProducts(filter='frames'){document.querySelector('#product-grid').innerHTML=products.filter(p=>p.category===filter).map(p=>`<button class="product-card" data-product="${p.image}" aria-label="View ${p.name}"><div class="product-photo"><img src="/assets/product-${p.image}.webp" alt="${p.name} manufactured by TPPL" loading="lazy"></div><small>${p.label}</small><h3>${p.name}</h3><span class="card-action">View component</span></button>`).join('');document.querySelectorAll('[data-product]').forEach(b=>b.addEventListener('click',()=>{const p=products.find(p=>p.image===Number(b.dataset.product));openDetail(p.name,`/assets/product-${p.image}.webp`,p.description+' Contact our team to discuss your drawings, materials, dimensions and quantities.');}));}
+renderProducts('frames');document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(t=>{t.classList.toggle('active',t===b);t.setAttribute('aria-pressed',String(t===b));});renderProducts(b.dataset.filter);}));
 function renderUnit(i){document.dispatchEvent(new CustomEvent("plant-change",{detail:i}));const u=units[i];document.querySelectorAll('[data-unit]').forEach((b,j)=>{b.setAttribute('aria-selected',String(i===j));b.tabIndex=i===j?0:-1;});const panel=document.querySelector('#facility-panel');panel.setAttribute('aria-labelledby',`tab-${i}`);panel.innerHTML=`<img src="/assets/${u.image}.webp" alt="TPPL manufacturing unit at ${u.name}" loading="lazy"><div><p class="eyebrow">UNIT 0${i+1} / MAHARASHTRA</p><h3>${u.name}</h3><p>${u.text}</p><p>${u.equipment}</p><div class="facility-meta"><div><strong>${u.area}</strong><span>Square feet of plant area</span></div><div><strong>${u.crane}</strong><span>Crane infrastructure</span></div></div></div>`;}
 renderUnit(0);document.querySelectorAll('[data-unit]').forEach(b=>{b.addEventListener('click',()=>renderUnit(Number(b.dataset.unit)));b.addEventListener('keydown',e=>{let i=Number(b.dataset.unit);if(e.key==='ArrowRight')i=(i+1)%4;else if(e.key==='ArrowLeft')i=(i+3)%4;else if(e.key==='Home')i=0;else if(e.key==='End')i=3;else return;e.preventDefault();renderUnit(i);document.querySelector(`#tab-${i}`).focus();});});
 const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('nav');
