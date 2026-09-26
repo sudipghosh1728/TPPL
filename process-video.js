@@ -3,7 +3,7 @@ const motionButton = processVisual?.querySelector('.motion-toggle');
 
 if (processVisual && motionButton) {
   const processVideos = [
-    ['/assets/videos/cnc-laser-cutting-process.mp4', 'Real CNC laser cutting process video'],
+    ['/assets/videos/automated-laser-cutting-process.mp4', 'Real automated laser cutting process video'],
     ['/assets/videos/forming-process.mp4', 'Real industrial metal forming process video'],
     ['/assets/videos/fabrication-welding-process.mp4', 'Real metal fabrication and welding process video'],
     ['/assets/videos/cnc-machining-process.mp4', 'Real CNC machining process video'],

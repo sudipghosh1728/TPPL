@@ -66,7 +66,7 @@ Every photograph and video used by the website is stored below `public/assets`, 
 
 The homepage process explorer uses locally archived, free-to-use process footage and changes the clip with the selected process:
 
-- Cutting: Pexels video 28268186 by Žygintas Urbonas — https://www.pexels.com/video/cnc-28268186/
+- Cutting: Pexels video 30456101 by Cemrecan Yurtman — https://www.pexels.com/video/high-tech-laser-cutting-process-in-factory-30456101/
 - Forming: Pexels video 27936928 by Žygintas Urbonas — https://www.pexels.com/video/cnc-27936928/
 - Fabrication: Pexels video 5846597 by Tima Miroshnichenko — https://www.pexels.com/video/cutting-metal-with-welding-torch-5846597/
 - Machining: Pexels video 5161379 by Memory Portraits — https://www.pexels.com/video/close-up-footage-of-a-machine-smoothening-a-material-5161379/
