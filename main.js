@@ -62,26 +62,13 @@ reducedMotion.addEventListener('change', updateHeroVideo);
 document.addEventListener('visibilitychange', updateHeroVideo);
 updateHeroVideo();
 const aboutFilm = document.querySelector('.about-film-video');
-const aboutFilmToggle = document.querySelector('.about-film-toggle');
-if (aboutFilm && aboutFilmToggle) {
-  let manuallyPaused = false;
+if (aboutFilm) {
   let inView = false;
   const syncAboutFilm = () => {
-    if (inView && !document.hidden && !reducedMotion.matches && !manuallyPaused) {
+    if (inView && !document.hidden && !reducedMotion.matches) {
       aboutFilm.play().catch(() => {});
     } else aboutFilm.pause();
   };
-  const updateFilmButton = () => {
-    aboutFilmToggle.textContent = aboutFilm.paused ? 'Play video' : 'Pause video';
-    aboutFilmToggle.setAttribute('aria-label', `${aboutFilm.paused ? 'Play' : 'Pause'} manufacturing video`);
-  };
-  aboutFilm.addEventListener('play', updateFilmButton);
-  aboutFilm.addEventListener('pause', updateFilmButton);
-  aboutFilmToggle.addEventListener('click', () => {
-    manuallyPaused = !aboutFilm.paused;
-    if (aboutFilm.paused) aboutFilm.play().catch(() => {});
-    else aboutFilm.pause();
-  });
   new IntersectionObserver(entries => {
     inView = entries[0].isIntersecting;
     syncAboutFilm();
