@@ -72,3 +72,5 @@ aboutBlueprint?.addEventListener('pointerleave', () => {
   aboutBlueprint.style.removeProperty('--glow-x');
   aboutBlueprint.style.removeProperty('--glow-y');
 });
+document.querySelector('.corporate-footer .footer-bottom')?.insertAdjacentHTML('beforeend',
+  '<div class="footer-credit"><span>Designed and developed by</span><span class="footer-credit-logo"><img src="/assets/greyvector-logo.png" alt="Greyvector" width="1254" height="1254"></span></div>');

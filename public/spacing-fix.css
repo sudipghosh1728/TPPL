@@ -207,3 +207,14 @@
   .industry-card-copy span{font-size:8px}
   .industries>.section-heading>p{padding-left:12px}
 }
+
+/* Shared Greyvector credit on the homepage and inner-page footers. */
+.footer-credit{display:flex;align-items:center;gap:11px;white-space:nowrap;font-size:10px;font-weight:600;letter-spacing:.2px}
+.footer-credit-logo{display:block;width:158px;height:45px;flex:none;overflow:hidden;border:1px solid #ffffff8c;border-radius:8px;background:#fff;box-shadow:0 5px 16px #071d3027}
+.footer-credit-logo img,.page-footer .footer-credit-logo img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 50%}
+.corporate-footer .footer-credit{color:#e1edf5}
+.corporate-footer .footer-bottom>span:nth-of-type(2){color:#ffab67}
+.page-footer .footer-credit{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:flex-end;padding-top:14px;border-top:1px solid #d8e5ed;color:#315f7c}
+.page-footer .footer-credit-logo{border-color:#d6e2ea;box-shadow:0 5px 15px #173b5914}
+@media(max-width:1000px){.corporate-footer .footer-bottom{flex-wrap:wrap}.corporate-footer .footer-credit{margin-left:auto}}
+@media(max-width:760px){.corporate-footer .footer-bottom{align-items:center}.corporate-footer .footer-credit{margin:0}.page-footer .footer-credit{justify-content:center}}

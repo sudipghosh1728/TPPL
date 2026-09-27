@@ -99,3 +99,5 @@ function notFound() { content.innerHTML = hero('NOT FOUND', 'Page unavailable.',
 ({ products:renderProducts, services:renderServices, product:renderProduct, service:renderService, gallery:renderGallery, clients:renderClients, about:renderAbout, contact:renderContact }[body.dataset.page] || notFound)();
 document.querySelector('.menu-toggle').addEventListener('click', (event) => { const nav = document.querySelector('#inner-navigation'); const open = nav.classList.toggle('open'); event.currentTarget.setAttribute('aria-expanded', String(open)); });
 document.querySelectorAll('.nav-group>button').forEach((button) => button.addEventListener('click', () => { const open = button.getAttribute('aria-expanded') === 'true'; button.setAttribute('aria-expanded', String(!open)); button.parentElement.classList.toggle('open', !open); }));
+document.querySelector('.page-footer')?.insertAdjacentHTML('beforeend',
+  '<div class="footer-credit"><span>Designed and developed by</span><span class="footer-credit-logo"><img src="/assets/greyvector-logo.png" alt="Greyvector" width="1254" height="1254"></span></div>');
