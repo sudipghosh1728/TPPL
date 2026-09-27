@@ -390,3 +390,16 @@
 @media(max-width:900px) { #capabilities .cap-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:560px) { #capabilities .cap-grid { grid-template-columns:1fr; gap:14px; } #capabilities .cap-card { height:280px; } #capabilities .cap-body p { min-height:0; font-size:13px; } #capabilities .cap-body h3 { font-size:23px; } }
 @media(prefers-reduced-motion:reduce) { #capabilities .cap-card,#capabilities .cap-photo img,#capabilities .card-action::after { transition:none; } #capabilities .cap-card:hover,#capabilities .cap-card:focus-visible,#capabilities .cap-card:hover img,#capabilities .cap-card:focus-visible img { transform:none; } }
+/* Keep service photography unobstructed, with details beneath each image. */
+#capabilities .cap-card { display:flex; flex-direction:column; height:auto; min-height:0; background:#fff; color:#163a5b; }
+#capabilities .cap-photo { position:relative; inset:auto; flex:none; width:100%; height:155px; border-radius:0; }
+#capabilities .cap-photo img { display:block; object-position:center; }
+#capabilities .cap-card::after { display:none; }
+#capabilities .cap-body { position:relative; inset:auto; flex:1; width:100%; padding:13px 16px 11px; border:0; border-radius:0; background:linear-gradient(120deg,#fff,#edf5fa); backdrop-filter:none; -webkit-backdrop-filter:none; }
+#capabilities .cap-body h3 { color:#163a5b; }
+#capabilities .cap-body p { color:#536e82; }
+#capabilities .card-action { color:#216489; border-color:#cddde7; padding-top:6px; }
+#capabilities .card-action::after { color:#163a5b; border-color:#aac6d8; }
+#capabilities .cap-card:hover .card-action::after,#capabilities .cap-card:focus-visible .card-action::after { color:#fff; }
+@media(min-width:1100px) and (min-height:650px) { #capabilities .cap-card { height:auto; } #capabilities .cap-photo { height:clamp(100px,15svh,180px); } #capabilities .cap-body { padding:10px 15px; } #capabilities .cap-body p { margin-bottom:6px; } }
+@media(max-width:560px) { #capabilities .cap-card { height:auto; } #capabilities .cap-photo { height:205px; } }
