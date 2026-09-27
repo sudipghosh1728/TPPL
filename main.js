@@ -91,4 +91,4 @@ if (aboutFilm && aboutFilmToggle) {
 }
 
 document.querySelector('.corporate-footer .footer-bottom')?.insertAdjacentHTML('beforeend',
-  '<div class="footer-credit"><span>Designed and developed by</span><span class="footer-credit-logo"><img src="/assets/greyvector-logo.png" alt="Greyvector" width="1254" height="1254"></span></div>');
+  '<div class="footer-credit"><span>Designed and developed by</span><span class="footer-credit-logo" aria-label="Greyvector"><img src="/assets/greyvector-mark.svg" alt="" width="30" height="31"><span class="greyvector-wordmark"><span>grey</span><span>vector</span></span></span></div>');
