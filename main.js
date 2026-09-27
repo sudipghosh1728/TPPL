@@ -61,16 +61,34 @@ function updateHeroVideo() {
 reducedMotion.addEventListener('change', updateHeroVideo);
 document.addEventListener('visibilitychange', updateHeroVideo);
 updateHeroVideo();
-const aboutBlueprint = document.querySelector('#about .about-blueprint');
-aboutBlueprint?.addEventListener('pointermove', event => {
-  if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
-  const bounds = aboutBlueprint.getBoundingClientRect();
-  aboutBlueprint.style.setProperty('--glow-x', `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
-  aboutBlueprint.style.setProperty('--glow-y', `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
-});
-aboutBlueprint?.addEventListener('pointerleave', () => {
-  aboutBlueprint.style.removeProperty('--glow-x');
-  aboutBlueprint.style.removeProperty('--glow-y');
-});
+const aboutFilm = document.querySelector('.about-film-video');
+const aboutFilmToggle = document.querySelector('.about-film-toggle');
+if (aboutFilm && aboutFilmToggle) {
+  let manuallyPaused = false;
+  let inView = false;
+  const syncAboutFilm = () => {
+    if (inView && !document.hidden && !reducedMotion.matches && !manuallyPaused) {
+      aboutFilm.play().catch(() => {});
+    } else aboutFilm.pause();
+  };
+  const updateFilmButton = () => {
+    aboutFilmToggle.textContent = aboutFilm.paused ? 'Play video' : 'Pause video';
+    aboutFilmToggle.setAttribute('aria-label', `${aboutFilm.paused ? 'Play' : 'Pause'} manufacturing video`);
+  };
+  aboutFilm.addEventListener('play', updateFilmButton);
+  aboutFilm.addEventListener('pause', updateFilmButton);
+  aboutFilmToggle.addEventListener('click', () => {
+    manuallyPaused = !aboutFilm.paused;
+    if (aboutFilm.paused) aboutFilm.play().catch(() => {});
+    else aboutFilm.pause();
+  });
+  new IntersectionObserver(entries => {
+    inView = entries[0].isIntersecting;
+    syncAboutFilm();
+  }, { threshold: 0.2 }).observe(aboutFilm);
+  document.addEventListener('visibilitychange', syncAboutFilm);
+  reducedMotion.addEventListener('change', syncAboutFilm);
+}
+
 document.querySelector('.corporate-footer .footer-bottom')?.insertAdjacentHTML('beforeend',
   '<div class="footer-credit"><span>Designed and developed by</span><span class="footer-credit-logo"><img src="/assets/greyvector-logo.png" alt="Greyvector" width="1254" height="1254"></span></div>');

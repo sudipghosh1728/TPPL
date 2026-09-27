@@ -353,3 +353,19 @@
   #about .blueprint-component>circle:nth-child(2) { animation:none; }
   #about .purpose-card:hover { transform:none; }
 }
+/* Real manufacturing footage replaces the illustrated About panel. */
+#about .about-film { position:relative; isolation:isolate; overflow:hidden; min-height:460px; background:#102d42; }
+#about .about-film::after { display:none; }
+#about .about-film-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+#about .about-film-top { position:absolute; inset:16px 16px auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 12px; border:1px solid #ffffff40; border-radius:12px; background:#102d4230; backdrop-filter:blur(5px); color:#fff; }
+#about .about-film-top>span { font-size:9px; font-weight:600; letter-spacing:1.3px; text-shadow:0 1px 4px #000; }
+#about .about-film-toggle { padding:7px 11px; border:1px solid #ffffff70; border-radius:30px; background:#102d4240; color:white; font:inherit; font-size:11px; cursor:pointer; }
+#about .about-film-toggle:hover,#about .about-film-toggle:focus-visible { background:#ffffff35; }
+#about .about-film-bottom { position:absolute; inset:auto 0 0; color:#fff; background:linear-gradient(transparent,#092338db 55%); padding-top:65px; }
+#about .about-film-caption { padding:0 24px 22px; }
+#about .about-film-caption>span { color:#ffad67; font-size:9px; letter-spacing:2px; font-weight:600; }
+#about .about-film-caption strong { display:block; margin-top:10px; font-size:clamp(25px,2.5vw,37px); line-height:1.12; font-weight:500; letter-spacing:-1px; }
+#about .about-film-caption p { margin:10px 0 0; color:#dce9f0; font-size:13px; }
+#about .about-film .blueprint-metrics { background:#ffffff12; backdrop-filter:blur(7px); border-top:1px solid #ffffff30; }
+@media(max-width:900px) { #about .about-film { height:480px; min-height:0; } }
+@media(max-width:560px) { #about .about-film { height:430px; } #about .about-film-top { inset:12px 12px auto; } #about .about-film-top>span { font-size:8px; letter-spacing:.7px; } }
