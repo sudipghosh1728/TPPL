@@ -22,6 +22,12 @@
 #home .hero-stats p { color:#d9e8f2; }
 #home .hero-bottom { position:relative; left:auto; right:auto; bottom:auto; margin:0 7%; padding:15px 0; }
 #home .hero-content { padding-bottom:28px; }
+#infrastructure .facility-panel { grid-template-columns:minmax(0,.85fr) minmax(0,1fr); gap:5%; }
+#infrastructure .facility-panel img {
+  width:100%; height:auto; aspect-ratio:872 / 620;
+  object-fit:cover; object-position:center top;
+  border:1px solid #ffffff30; border-radius:14px;
+}
 .enquiry-specifications { margin:5px 0 12px; border:1px solid #c7dbe8; border-radius:12px; padding:8px 12px; background:#edf4f866; }
 .enquiry-specifications summary { cursor:pointer; font-size:11px; font-weight:600; color:#28678f; }
 .enquiry-specifications[open] summary { margin-bottom:10px; }
@@ -75,7 +81,6 @@
   #products .product-photo { height:clamp(160px,27svh,300px); }
   #products .product-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   #infrastructure .facility-panel { min-height:0; }
-  #infrastructure .facility-panel img { height:clamp(220px,36svh,390px); }
   #infrastructure .facility-tabs { margin-bottom:20px; }
   main>#quality.section { display:grid; grid-template-columns:1fr 1.1fr; align-content:center; align-items:center; gap:5%; }
   #quality .engineering-dashboard { padding:16px; }
@@ -104,6 +109,7 @@
   #home .hero-stats>div,#home .hero-stats>div:first-child { padding:10px; }
   #home .hero-stats strong { font-size:25px; }
   #home .hero-stats strong.iso { font-size:17px; }
+  #infrastructure .facility-panel { grid-template-columns:1fr; }
 }
 @media(prefers-reduced-motion:reduce) {
   #home .hero-stats>div:hover { transform:none; }
