@@ -1,7 +1,7 @@
 const processVisual = document.querySelector('.machine-visual');
-const motionButton = processVisual?.querySelector('.motion-toggle');
+const processMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
-if (processVisual && motionButton) {
+if (processVisual) {
   const processVideos = [
     ['/assets/videos/automated-laser-cutting-process.mp4', 'Real automated laser cutting process video'],
     ['/assets/videos/forming-process.mp4', 'Real industrial metal forming process video'],
@@ -14,7 +14,7 @@ if (processVisual && motionButton) {
   const video = document.createElement('video');
 
   video.className = 'process-video';
-  video.autoplay = true;
+  video.autoplay = !processMotion.matches;
   video.muted = true;
   video.loop = true;
   video.playsInline = true;
@@ -26,37 +26,22 @@ if (processVisual && motionButton) {
   schematic?.replaceWith(video);
 
   const syncVideoState = () => {
-    const shouldPause = motionButton.textContent.trim().startsWith('Play');
-    if (shouldPause) {
-      video.pause();
-      motionButton.textContent = 'Play video';
-    } else {
-      video.play().catch(() => {
-        motionButton.textContent = 'Play video';
-      });
-      motionButton.textContent = 'Pause video';
-    }
+    if (processMotion.matches || document.hidden) video.pause();
+    else video.play().catch(() => {});
   };
-
-  motionButton.textContent = matchMedia('(prefers-reduced-motion: reduce)').matches
-    ? 'Play video'
-    : 'Pause video';
-  motionButton.setAttribute('aria-label', 'Pause or play the CNC laser cutting process video');
-  motionButton.addEventListener('click', () => queueMicrotask(syncVideoState));
-  video.addEventListener('click', () => motionButton.click());
+  processMotion.addEventListener('change', syncVideoState);
+  document.addEventListener('visibilitychange', syncVideoState);
   document.querySelectorAll('[data-process]').forEach((button) => {
     button.addEventListener('click', () => {
       const index = Number(button.dataset.process);
       const selected = processVideos[index];
       if (!selected || video.dataset.processVideo === String(index)) return;
-      const wasPaused = motionButton.textContent.trim().startsWith('Play');
       video.dataset.processVideo = String(index);
       video.poster = `/assets/${processPosters[index]}.webp`;
       video.src = selected[0];
       video.setAttribute('aria-label', selected[1]);
-      motionButton.setAttribute('aria-label', `Pause or play the ${selected[1].toLowerCase()}`);
       video.load();
-      if (!wasPaused) video.play().catch(() => { motionButton.textContent = 'Play video'; });
+      syncVideoState();
     });
   });
   processVisual.querySelector('.console-bottom span:first-child').textContent = 'REAL PROCESS FOOTAGE';
