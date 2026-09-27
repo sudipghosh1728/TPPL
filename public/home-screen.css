@@ -175,14 +175,17 @@
 #engineering .machine-visual { position:relative; height:100%; min-height:0; background:#081d30; }
 #engineering .process-video {
   position:absolute; inset:0; width:100%; height:100%; max-height:none;
-  aspect-ratio:auto; object-fit:contain; flex:none;
+  aspect-ratio:auto; object-fit:cover; flex:none;
 }
+#engineering .machine-visual[data-mode="machining"] .process-video { object-position:50% 40%; }
 #engineering .console-header,#engineering .console-bottom {
   position:absolute; left:14px; right:14px; z-index:2;
   display:flex; align-items:center; margin:0; padding:10px 14px;
   border:1px solid #ffffff36; border-radius:11px;
-  background:#08253cca; color:#edf5fa;
-  -webkit-backdrop-filter:blur(13px); backdrop-filter:blur(13px);
+  background:linear-gradient(115deg,#ffffff18,#08253c30); color:#fff;
+  text-shadow:0 1px 4px #000c;
+  box-shadow:inset 0 1px 0 #ffffff20,0 3px 12px #0000000d;
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
 }
 #engineering .console-header { top:14px; }
 #engineering .console-bottom { bottom:14px; overflow:hidden; }
@@ -190,7 +193,8 @@
   content:""; position:absolute; left:0; bottom:0; width:var(--stage,20%); height:2px;
   background:#ff9035; box-shadow:0 0 12px #ff9035; transition:width .4s ease;
 }
-#engineering .motion-toggle { border-color:#ffffff70; border-radius:100px; color:#fff; padding:5px 10px; }
+#engineering .motion-toggle { border-color:#ffffff70; border-radius:100px; color:#fff; padding:5px 10px; background:#08253c38; text-shadow:0 1px 3px #000a; }
+#engineering .motion-toggle:hover,#engineering .motion-toggle:focus-visible { background:#ffffff30; border-color:#fff; }
 #engineering .machine-details {
   min-width:0; height:100%; padding:18px 22px;
   color:#fff; background:radial-gradient(circle at 100% 0%,#377eaa36,transparent 45%),linear-gradient(145deg,#173e5f,#0d2a43);
