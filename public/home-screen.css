@@ -242,3 +242,110 @@
   #engineering #process-copy>* { animation:none; }
   #engineering .console-bottom::after { transition:none; }
 }
+
+/* About: a quiet engineering drawing beside the company story. */
+#about.company-about {
+  display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+  grid-template-areas:"visual copy" "visual purpose" "footprint footprint";
+  column-gap:4%; row-gap:10px; align-content:center; align-items:stretch;
+  background:radial-gradient(circle at 5% 17%,#dbeef8ad,transparent 34%),linear-gradient(155deg,#f7fbfd,#fff 68%);
+  position:relative; overflow:hidden;
+}
+#about.company-about::before {
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.25;
+  background-image:linear-gradient(#3c779b16 1px,transparent 1px),linear-gradient(90deg,#3c779b16 1px,transparent 1px);
+  background-size:36px 36px;
+  -webkit-mask-image:linear-gradient(90deg,#000,transparent 64%); mask-image:linear-gradient(90deg,#000,transparent 64%);
+}
+#about.company-about>* { position:relative; z-index:1; }
+#about .about-main { display:contents; }
+#about .about-blueprint {
+  grid-area:visual; height:100%; min-height:0; border-radius:25px;
+  background:radial-gradient(circle at var(--glow-x,50%) var(--glow-y,43%),#246083,#123b58 48%,#0b283f 100%);
+  box-shadow:0 25px 55px #0b35522b;
+}
+#about .about-blueprint::after {
+  content:""; position:absolute; inset:9px; border:1px solid #ffffff21;
+  border-radius:17px; pointer-events:none;
+}
+#about .blueprint-top { position:relative; z-index:1; padding:12px 19px; }
+#about .about-blueprint svg { width:100%; height:100%; min-height:290px; max-height:410px; }
+#about .blueprint-component>circle:first-child { stroke:#b7d3e4; filter:drop-shadow(0 0 6px #72b6d8); }
+#about .blueprint-component>circle:nth-child(2) { stroke:#88b5cf; stroke-dasharray:5 9; transform-box:fill-box; transform-origin:center; animation:about-gear 32s linear infinite; }
+#about .blueprint-bolts circle { filter:drop-shadow(0 0 4px #f58220); }
+#about .blueprint-callouts text { font-size:11px; letter-spacing:1.2px; }
+#about .blueprint-dimensions text { font-size:10px; }
+#about .blueprint-caption { position:relative; z-index:1; padding:0 22px 17px; }
+#about .blueprint-caption strong { font-size:clamp(17px,1.5vw,22px); }
+#about .blueprint-metrics { position:relative; z-index:1; background:#ffffff0e; -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+#about .blueprint-metrics>div { padding:12px 17px; }
+#about .blueprint-metrics strong { font-size:20px; }
+#about .about-company-copy { grid-area:copy; align-self:end; min-width:0; }
+#about .about-company-copy .eyebrow { display:inline-flex; align-items:center; gap:9px; margin-bottom:10px; }
+#about .about-company-copy .eyebrow::before { content:""; width:6px; height:6px; border-radius:50%; background:#f58220; box-shadow:0 0 0 5px #f5822020; }
+#about .about-company-copy h2 { font-size:clamp(33px,3.3vw,50px); line-height:1.12; }
+#about .about-company-copy .about-intro {
+  margin:11px 0 12px; padding:9px 16px;
+  border-left:3px solid #f58220; border-radius:0 12px 12px 0;
+  background:linear-gradient(90deg,#e9f4fa,#f6fafca6);
+  color:#235f85; font-size:clamp(15px,1.35vw,19px); line-height:1.42;
+}
+#about .about-company-copy>p:not(.eyebrow):not(.about-intro) { font-size:12.5px; line-height:1.5; margin-bottom:7px; }
+#about .about-strengths { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:7px; margin:10px 0; counter-reset:about-strength; }
+#about .about-strengths span {
+  display:flex; gap:7px; align-items:center; min-width:0; padding:7px 9px;
+  border:1px solid #d3e4ee; border-radius:9px; background:#ffffffb5;
+  color:#315d79; font-size:9px; line-height:1.3;
+}
+#about .about-strengths span::before { counter-increment:about-strength; content:"0" counter(about-strength); color:#dc701d; font-size:8px; font-weight:700; }
+#about .about-links { gap:12px; }
+#about .about-links .button { padding:11px 17px; }
+#about .about-links .under-link { padding:9px 0; }
+#about .purpose-grid { grid-area:purpose; align-self:stretch; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; }
+#about .purpose-card {
+  position:relative; gap:12px; padding:11px 15px; overflow:hidden;
+  border:1px solid #d5e4ed; border-top:2px solid #28678f; border-radius:14px;
+  background:#ffffffc9; box-shadow:0 12px 24px #184a6b0b;
+  transition:transform .28s,box-shadow .28s,border-color .28s;
+}
+#about .purpose-card:nth-child(2) { border-top-color:#f58220; }
+#about .purpose-card:hover { transform:translateY(-3px); box-shadow:0 16px 28px #184a6b1b; border-color:#bed6e5; }
+#about .purpose-icon { display:grid; place-items:center; width:35px; height:35px; flex:none; border-radius:50%; background:#e7f3f9; font-size:27px; }
+#about .purpose-card:nth-child(2) .purpose-icon { background:#fff0e3; }
+#about .purpose-card .eyebrow { font-size:8px; margin-bottom:7px; }
+#about .purpose-card h3 { font-size:16px; line-height:1.25; margin-bottom:4px; }
+#about .purpose-card p:last-child { font-size:11px; line-height:1.35; }
+#about .about-footprint {
+  grid-area:footprint; display:grid; grid-template-columns:.8fr 1.2fr 1.2fr 1.2fr;
+  align-items:center; gap:14px; margin:0; padding:12px 19px;
+  border:1px solid #d5e5ef; border-radius:15px;
+  background:linear-gradient(110deg,#ffffffdc,#eaf4f9e8);
+  box-shadow:0 10px 25px #1643610d;
+}
+#about .about-footprint>div:not(:first-child) { border-left:1px solid #d6e6ef; padding-left:18px; }
+#about .about-footprint strong { font-size:21px; line-height:1.15; }
+#about .about-footprint>a { justify-self:end; text-align:right; }
+@keyframes about-gear { to { transform:rotate(360deg); } }
+@media(max-width:1050px) {
+  #about.company-about { display:block; }
+  #about .about-main { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:4%; align-items:center; }
+  #about .about-blueprint,#about .about-company-copy { grid-area:auto; }
+  #about .about-blueprint { height:auto; }
+  #about .about-blueprint svg { height:260px; min-height:0; }
+  #about .purpose-grid { margin-top:18px; }
+  #about .about-footprint { margin-top:16px; }
+}
+@media(max-width:760px) {
+  #about .about-main { grid-template-columns:1fr; gap:23px; }
+  #about .about-blueprint svg { height:275px; }
+  #about .about-company-copy h2 { font-size:34px; }
+  #about .about-strengths { grid-template-columns:1fr; }
+  #about .purpose-grid { grid-template-columns:1fr; }
+  #about .about-footprint { grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  #about .about-footprint>div:not(:first-child) { border:0; padding-left:0; }
+  #about .about-footprint>a { justify-self:start; text-align:left; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #about .blueprint-component>circle:nth-child(2) { animation:none; }
+  #about .purpose-card:hover { transform:none; }
+}

@@ -61,3 +61,14 @@ function updateHeroVideo() {
 reducedMotion.addEventListener('change', updateHeroVideo);
 document.addEventListener('visibilitychange', updateHeroVideo);
 updateHeroVideo();
+const aboutBlueprint = document.querySelector('#about .about-blueprint');
+aboutBlueprint?.addEventListener('pointermove', event => {
+  if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
+  const bounds = aboutBlueprint.getBoundingClientRect();
+  aboutBlueprint.style.setProperty('--glow-x', `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
+  aboutBlueprint.style.setProperty('--glow-y', `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
+});
+aboutBlueprint?.addEventListener('pointerleave', () => {
+  aboutBlueprint.style.removeProperty('--glow-x');
+  aboutBlueprint.style.removeProperty('--glow-y');
+});
